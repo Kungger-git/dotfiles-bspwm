@@ -10,6 +10,10 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf $HOME/yay-git/
 # install aur packages
 yay -Sy --noconfirm - < aur.txt
 
+# enable services
+sudo systemctl enable iwd.service
+sudo systemctl enable systemd-resolved.service
+
 # make user dirs
 xdg-user-dirs-update
 
