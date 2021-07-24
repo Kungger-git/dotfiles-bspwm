@@ -1,0 +1,11 @@
+polybar
+pfetch
+unimatrix-git
+tty-clock
+bpytop
+dracula-gtk-theme
+ksuperkey
+toilet
+xfce-polkit
+visual-studio-code-bin
+discord
