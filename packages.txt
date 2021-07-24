@@ -7,6 +7,9 @@ xorg-xinit
 neofetch
 cmatrix
 firefox
+vlc
+qbittorrent
+qbittorrent-nox
 nitrogen
 archlinux-wallpaper
 xf86-input-libinput
