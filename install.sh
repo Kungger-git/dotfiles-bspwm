@@ -12,7 +12,21 @@ yay -Sy --noconfirm - < aur.txt
 
 # enable services
 sudo systemctl enable iwd.service
+sudo systemctl start iwd.service
+
 sudo systemctl enable systemd-resolved.service
+sudo systemctl start systemd-resolved.service
+
+# write to iwd
+echo "[General]
+EnableNetworkConfiguration=true
+
+[Network]
+NameResolvingService=systemd
+" | sudo tee /etc/iwd/main.conf
+
+# write to modules
+echo "wl" | sudo tee /etc/modules-load.d/wl.conf
 
 # make user dirs
 xdg-user-dirs-update
