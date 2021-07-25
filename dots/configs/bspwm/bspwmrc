@@ -41,3 +41,24 @@ bspc rule -a Pcmanfm state=floating follow=on focus=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+
+## Autostart
+
+# Kill if already running
+killall -9 sxhkd dunst xfce4-power-manager
+
+# Launch notification daemon
+dunst \
+-geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 10" &
+
+# polkit agent
+if [[ ! `pidof xfce-polkit` ]]; then
+    /usr/lib/xfce-polkit/xfce-polkit &
+fi
+
+# Launch keybindings daemon
+sxhkd &
+
+# Enable power management
+xfce4-power-manager &
