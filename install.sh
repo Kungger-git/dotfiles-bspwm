@@ -20,6 +20,10 @@ xdg-user-dirs-update
 # copy configs
 cp -r dots/configs/* $HOME/.config/
 
+# installs oh-my-zsh and changes shell to zsh
+curl -L http://install.ohmyz.sh | sh
+sudo chsh -s /bin/zsh; chsh -s /bin/zsh
+
 # copy home dots
 cp dots/.zshrc $HOME
 cp dots/.vimrc $HOME
@@ -35,10 +39,6 @@ else
     mkdir -p "$FDIR"
     cp -rf fonts/* "$FDIR"
 fi
-
-# install oh-my-zsh and change shell to zsh
-curl -L http://install.ohmyz.sh | sh
-sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
 # clone zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
