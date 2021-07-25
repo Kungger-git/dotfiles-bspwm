@@ -43,6 +43,7 @@ cp dots/.zshrc $HOME
 cp dots/.vimrc $HOME
 cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
+cp dots/.gtk-2.0 $HOME
 
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"

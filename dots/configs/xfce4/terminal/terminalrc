@@ -2,7 +2,7 @@
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
-MiscBordersDefault=TRUE
+MiscBordersDefault=FALSE
 MiscCursorBlinks=TRUE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -30,4 +30,5 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Source Code Pro Medium 10
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.800000
+ColorBackground=#24241f1f3131
 
