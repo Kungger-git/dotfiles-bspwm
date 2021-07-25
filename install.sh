@@ -17,29 +17,31 @@ sudo systemctl enable systemd-resolved.service
 # make user dirs
 xdg-user-dirs-update
 
-# mkdirs
-mkdir ~/.config/bspwm
-mkdir ~/.config/sxhkd
-mkdir ~/.config/picom
-mkdir ~/.config/polybar
+# copy configs
+cp -r dots/configs/* $HOME/.config/
 
-# copy examples
-cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
-cp /usr/share/doc/picom/picom.conf.example ~/.config/picom/picom.conf
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
-
-# install cool polybar themes
-git clone https://github.com/adi1090x/polybar-themes.git ~/polybar-themes
-cd ~/polybar-themes/; ./setup.sh; cd ~/arch-setup/
-
-# install oh my zsh
+# install oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
-sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
-# clone zsh plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# copy home dots
+cp dots/.zshrc $HOME
+cp -r dots/.oh-my-zsh $HOME
+cp dots/.vimrc $HOME
+cp dots/.gitconfig $HOME
+cp dots/.xinitrc $HOME
+
+# install fonts for polybar
+FDIR="$HOME/.local/share/fonts"
+echo -e "\n[*] Installing fonts..."
+if [[ -d "$FDIR" ]]; then
+    cp -rf fonts/* "$FDIR"
+else
+    mkdir -p "$FDIR"
+    cp -rf fonts/* "$FDIR"
+fi
+
+# change shell to zsh
+sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
 # install python3 pip
 git clone https://github.com/KungPaoChick/arch-pip-setup.git ~/.pip-setup; cd ~/.pip-setup
