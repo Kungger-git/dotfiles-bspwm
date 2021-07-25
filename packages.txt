@@ -1,6 +1,7 @@
 base-devel
 git
 broadcom-wl
+iwd
 xdg-user-dirs
 xorg
 xorg-xinit

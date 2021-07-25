@@ -21,7 +21,7 @@ bspc config focus_follows_pointer true
 bspc rule -a Alacritty desktop='^1' follow=on focus=on
 
 # 2nd desktop
-declare -a web=(firefox)
+declare -a web=(firefox discord)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
 
