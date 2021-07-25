@@ -17,6 +17,10 @@ bspc config paddingless_monocle true
 bspc config single_monocle false
 bspc config focus_follows_pointer true
 
+# Enable SUper Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
 # 1st desktop
 bspc rule -a Alacritty desktop='^1' follow=on focus=on
 
