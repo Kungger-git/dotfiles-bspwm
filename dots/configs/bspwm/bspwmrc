@@ -25,7 +25,8 @@ declare -a web=(firefox)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
 
-
+# 3rd desktop
+bspc rule -a Pcmanfm desktop='^3' follow=on focus=on
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
