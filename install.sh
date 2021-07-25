@@ -5,7 +5,7 @@ sudo pacman -Sy --noconfirm - < packages.txt
 git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..
 
 # remove orphans and yay-git folder
-sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf $HOME/yay-git/
+sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 
 # install aur packages
 yay -Sy --noconfirm - < aur.txt
@@ -20,12 +20,8 @@ xdg-user-dirs-update
 # copy configs
 cp -r dots/configs/* $HOME/.config/
 
-# install oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
-
 # copy home dots
 cp dots/.zshrc $HOME
-cp -r dots/.oh-my-zsh $HOME
 cp dots/.vimrc $HOME
 cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
@@ -40,8 +36,13 @@ else
     cp -rf fonts/* "$FDIR"
 fi
 
-# change shell to zsh
+# install oh-my-zsh and change shell to zsh
+curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh; chsh -s /bin/zsh
+
+# clone zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # install python3 pip
 git clone https://github.com/KungPaoChick/arch-pip-setup.git ~/.pip-setup; cd ~/.pip-setup
