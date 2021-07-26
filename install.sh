@@ -28,9 +28,6 @@ NameResolvingService=systemd
 # write to modules
 echo "wl" | sudo tee /etc/modules-load.d/wl.conf
 
-# configure betterlockscreen
-betterlockscreen -u /usr/share/backgrounds/archlinux/simple.png -b 1.0
-
 # make user dirs
 xdg-user-dirs-update
 
@@ -47,6 +44,9 @@ cp dots/.vimrc $HOME
 cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
 cp dots/.gtk-2.0 $HOME
+
+# initialize betterlockscreen
+betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
 
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"

@@ -20,7 +20,7 @@ super + Escape
 
 # lockscreen
 control + alt + l
-    betterlockscreen -l dimblur
+    betterlockscreen -l
 
 # Rofi Menus
 super + {x}
