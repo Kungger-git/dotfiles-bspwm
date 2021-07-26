@@ -28,6 +28,9 @@ NameResolvingService=systemd
 # write to modules
 echo "wl" | sudo tee /etc/modules-load.d/wl.conf
 
+# configure betterlockscreen
+betterlockscreen -u /usr/share/backgrounds/archlinux/simple.png -b 1.0
+
 # make user dirs
 xdg-user-dirs-update
 

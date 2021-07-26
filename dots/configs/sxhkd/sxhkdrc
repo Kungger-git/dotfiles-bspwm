@@ -18,6 +18,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# lockscreen
+control + alt + l
+    betterlockscreen -l dimblur
+
 # Rofi Menus
 super + {x}
     sh ~/.config/polybar/forest/scripts/powermenu.sh

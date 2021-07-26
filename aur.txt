@@ -1,5 +1,7 @@
 networkmanager-dmenu
-polybar
+betterlockscreen
+xdpyinfo
+bc
 pfetch
 unimatrix-git
 tty-clock
@@ -10,3 +12,4 @@ toilet
 xfce-polkit
 visual-studio-code-bin
 discord
+polybar
