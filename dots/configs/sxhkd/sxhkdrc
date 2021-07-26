@@ -18,6 +18,13 @@ super + Escape
 # bspwm hotkeys
 #
 
+# Rofi Menus
+super + {x}
+    sh ~/.config/polybar/forest/scripts/powermenu.sh
+
+control + alt {t}
+    sh ~/.config/polybar/forest/scripts/style-switch.sh
+
 # Launch Apps
 super + shift + {f,w,e}
     {pcmanfm,firefox,code}
