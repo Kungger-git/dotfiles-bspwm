@@ -1,7 +1,5 @@
 networkmanager-dmenu
 betterlockscreen
-xdpyinfo
-bc
 pfetch
 unimatrix-git
 tty-clock
