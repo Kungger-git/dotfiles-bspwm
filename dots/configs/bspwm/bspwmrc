@@ -3,6 +3,9 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh --forest
 
+# initialize betterlockscreen
+betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
+
 bspc monitor -d I II III IV V VI
 
 bspc config border_width         1

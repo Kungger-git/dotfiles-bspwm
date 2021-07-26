@@ -45,9 +45,6 @@ cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
 cp dots/.gtk-2.0 $HOME
 
-# initialize betterlockscreen
-betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
-
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"
 echo -e "\n[*] Installing fonts..."
