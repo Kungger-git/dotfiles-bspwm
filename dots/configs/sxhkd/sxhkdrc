@@ -18,6 +18,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# networkmanager-dmenu
+super + n
+    networkmanager_dmenu
+
 # lockscreen
 control + alt + l
     betterlockscreen -l
