@@ -2,6 +2,12 @@ base-devel
 git
 broadcom-wl
 iwd
+bmon
+inetutils
+bluez
+bluez-utils
+nethogs
+nm-connection-editor
 xdg-user-dirs
 xorg
 xorg-xinit
