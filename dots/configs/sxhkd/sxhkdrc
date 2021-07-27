@@ -50,7 +50,7 @@ XF86MonBrightness{Up,Down}
 
 # screenshot
 super + shift + 3
-    scrot 'Screenshot_%Y-%m-%d-%S_$wx%h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+    scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
 
 # random wallpaper
 control + alt + w
