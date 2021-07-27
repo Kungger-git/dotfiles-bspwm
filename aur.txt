@@ -10,5 +10,4 @@ toilet
 xfce-polkit
 visual-studio-code-bin
 discord
-ttf-ms-fonts
 polybar
