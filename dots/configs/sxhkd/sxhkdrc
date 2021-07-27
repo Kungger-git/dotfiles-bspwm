@@ -50,7 +50,7 @@ super + shift + 3
 
 # random wallpaper
 control + alt + w
-    nitrogen --random --set-tiled /usr/share/backgrounds/
+    nitrogen --random --set-scaled /usr/share/backgrounds/
 
 # quit/restart bspwm
 super + alt + {q,r}

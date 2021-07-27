@@ -50,6 +50,6 @@ fi
 
 # custom
 udiskie &
-nitrogen --random --set-tiled /usr/share/backgrounds/ &
+nitrogen --random --set-scaled /usr/share/backgrounds/ &
 picom -f &
 exec bspwm
