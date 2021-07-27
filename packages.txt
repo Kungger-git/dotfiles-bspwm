@@ -70,3 +70,4 @@ gtk-engine-murrine
 gparted
 kvantum-qt5
 qt5ct
+ueberzug
