@@ -1,3 +1,6 @@
+# full upgrade
+sudo pacman -Syyu
+
 # install system packages
 sudo pacman -Sy --noconfirm - < packages.txt
 

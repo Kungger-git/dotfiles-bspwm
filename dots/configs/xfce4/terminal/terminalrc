@@ -30,5 +30,6 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Source Code Pro Medium 10
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.800000
-ColorBackground=#3d3d38384646
+ColorBackground=#24241f1f3131
+ColorUseTheme=TRUE
 
