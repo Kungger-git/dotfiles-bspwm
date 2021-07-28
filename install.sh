@@ -50,6 +50,9 @@ cp dots/.vimrc $HOME
 cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
 cp dots/.gtkrc-2.0 $HOME
+cp dots/.hushlogin $HOME
+cp -rf dots/.ncmpcpp $HOME
+cp -rf dots/.mpd $HOME
 
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"
