@@ -71,6 +71,7 @@ pulseaudio-alsa
 pulseaudio-equalizer-ladspa
 ncmpcpp
 mpd
+mpc
 gtk-engine-murrine
 gparted
 ueberzug
