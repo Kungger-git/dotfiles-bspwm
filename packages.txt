@@ -71,6 +71,4 @@ pulseaudio-alsa
 pulseaudio-equalizer-ladspa
 gtk-engine-murrine
 gparted
-kvantum-qt5
-qt5ct
 ueberzug
