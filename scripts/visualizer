@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mpc play && ncmpcpp -s visualizer
