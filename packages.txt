@@ -69,6 +69,8 @@ pavucontrol
 pulseaudio
 pulseaudio-alsa
 pulseaudio-equalizer-ladspa
+ncmpcpp
+mpd
 gtk-engine-murrine
 gparted
 ueberzug
