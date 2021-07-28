@@ -23,6 +23,9 @@ sudo systemctl start systemd-resolved.service
 # touchpad configuration
 sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 
+# scripts
+sudo cp -f scripts/* /usr/local/bin/
+
 # write to iwd
 echo "[General]
 EnableNetworkConfiguration=true
