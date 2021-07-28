@@ -97,4 +97,4 @@ follow_now_playing_lyrics = "yes"
 ignore_leading_the = "yes"
 empty_tag_marker = ""
 
-execute_on_song_change = kunst --size 60x60 --silent
+# execute_on_song_change = kunst --size 60x60 --silent
