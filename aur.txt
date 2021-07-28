@@ -1,6 +1,7 @@
 networkmanager-dmenu
 betterlockscreen
 pfetch
+cava
 unimatrix-git
 tty-clock
 bpytop
