@@ -61,6 +61,9 @@ cp -rf dots/.mpd $HOME
 # copy wallpapers to /usr/share/backgrounds/
 sudo cp -rf wallpapers /usr/share/backgrounds/
 
+# copy songs
+cp Music/* $HOME/Music
+
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"
 echo -e "\n[*] Installing fonts..."
