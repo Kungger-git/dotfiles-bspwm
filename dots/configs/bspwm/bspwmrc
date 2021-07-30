@@ -8,14 +8,13 @@ betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
 
 bspc monitor -d I II III IV V VI
 
-bspc config border_width         1
+bspc config border_width         3
 bspc config window_gap           10
 bspc config split_ratio          0.50
 
 bspc config focused_border_color "#81A1C1"
 bspc config normal_border_color "#2E3440"
 bspc config active_border_color "#B48EAD"
-bspc config border_width 3
 
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
