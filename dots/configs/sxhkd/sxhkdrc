@@ -39,7 +39,7 @@ super + shift + {f,w,e,d}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-    {amixer set Master 5%+,amixer set Master 5%-}
+    volume{-up,-down}
 
 XF86AudioMute
     amixer set Master toggle
