@@ -54,8 +54,12 @@ cp dots/.gitconfig $HOME
 cp dots/.xinitrc $HOME
 cp dots/.gtkrc-2.0 $HOME
 cp dots/.hushlogin $HOME
+cp dots/.fehbg $HOME
 cp -rf dots/.ncmpcpp $HOME
 cp -rf dots/.mpd $HOME
+
+# copy wallpapers to /usr/share/backgrounds/
+sudo cp -rf wallpapers /usr/share/backgrounds/
 
 # install fonts for polybar
 FDIR="$HOME/.local/share/fonts"

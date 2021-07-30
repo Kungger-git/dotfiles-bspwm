@@ -63,6 +63,9 @@ fi
 # Launch keybindings daemon
 sxhkd &
 
+# Restore wallpaper
+bash $HOME/.fehbg
+
 # Enable power management
 xfce4-power-manager &
 
