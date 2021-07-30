@@ -194,7 +194,7 @@ main() {
 		if [ "$ARTLESS" == true ];then
 			# Change the path to COVER because the music note
 			# image is a png not jpg
-			COVER=/usr/share/pixmaps/kunst.png
+			COVER=/usr/share/pixmaps/archlinux-logo.png
 
 			# Decode the base64 encoded image and save it
 			# to /tmp/kunst.png
