@@ -26,6 +26,10 @@ sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 # scripts
 sudo cp -f scripts/* /usr/local/bin/
 
+# copies grub config and updates it
+sudo cp -f grubcfg/grub /etc/default/
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 # write to iwd
 echo "[General]
 EnableNetworkConfiguration=true

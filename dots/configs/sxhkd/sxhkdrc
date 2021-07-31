@@ -7,7 +7,7 @@ super + Return
     xfce4-terminal
 
 # program launcher
-super + d
+alt + F1
     sh ~/.config/polybar/forest/scripts/launcher.sh
 
 # make sxhkd reload its configuration files:

@@ -42,6 +42,7 @@ adapta-gtk-theme
 papirus-icon-theme
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
+grub-customizer
 zsh
 viewnior
 rofi

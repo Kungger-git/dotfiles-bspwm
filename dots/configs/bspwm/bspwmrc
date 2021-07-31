@@ -3,9 +3,6 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh --forest
 
-# initialize betterlockscreen
-betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
-
 bspc monitor -d I II III IV V VI
 
 bspc config border_width         3
@@ -76,6 +73,9 @@ bash $HOME/.fehbg
 
 # Enable power management
 xfce4-power-manager &
+
+# initialize betterlockscreen
+betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
 
 # Start mpd
 exec mpd &

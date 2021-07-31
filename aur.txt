@@ -12,4 +12,6 @@ toilet
 xfce-polkit
 visual-studio-code-bin
 discord
+spotify
+minecraft-launcher
 polybar
