@@ -43,8 +43,8 @@ export GRUB_COLOR_NORMAL="light-gray/black"
 export GRUB_COLOR_HIGHLIGHT="light-gray/dark-gray"
 
 # Uncomment one of them for the gfx desired, a image background or a gfxtheme
-GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/simple.png"
-#GRUB_THEME="/path/to/gfxtheme"
+#GRUB_BACKGROUND="/usr/share/backgrounds/archlinux/simple.png"
+GRUB_THEME="/boot/grub/themes/default/theme.txt"
 
 # Uncomment to get a beep at GRUB start
 #GRUB_INIT_TUNE="480 440 1"
