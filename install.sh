@@ -30,6 +30,7 @@ sudo cp -f scripts/* /usr/local/bin/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
 sudo grub-mkdir -o /boot/grub/grub.cfg
+sudo cp -f grubcfg/grub.cfg /boot/grub/grub.cfg
 
 # write to iwd
 echo "[General]
