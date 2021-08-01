@@ -28,7 +28,7 @@ sudo cp -f scripts/* /usr/local/bin/
 
 # copies grub config and updates it
 sudo cp -f grubcfg/grub /etc/default/
-sudo cp -rf grubcfg/default /boot/grub/themes/
+sudo cp -rf grubcfg/themes/default /boot/grub/themes/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # write to iwd

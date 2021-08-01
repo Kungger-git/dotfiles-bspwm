@@ -3,7 +3,7 @@
 
 # Global Property
 title-text: ""
-desktop-image: "background.jpg"
+desktop-image: "/usr/share/backgrounds/wallpapers/wal_6.jpg"
 desktop-color: "#000000"
 terminal-font: "Terminus Regular 14"
 terminal-box: "terminal_box_*.png"
