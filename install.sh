@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 # full upgrade
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
