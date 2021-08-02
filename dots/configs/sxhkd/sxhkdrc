@@ -49,8 +49,13 @@ XF86MonBrightness{Up,Down}
     backlight{-up,-down}
 
 # screenshot
-super + shift + 3
+Print
     scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
+# Take a screenshot in 5 seconds
+alt + Print
+	scrot -d 5 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
 
 # random wallpaper
 control + alt + w

@@ -52,10 +52,7 @@ for i in ${media[@]}; do
 
 bspc rule -a Viewnior state=floating follow=on focus=on
 bspc rule -a Pcmanfm state=floating follow=on focus=on
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-
+bspc rule -a Nm-connection-editor state=floating follow=on focus=on
 
 ## Autostart
 
