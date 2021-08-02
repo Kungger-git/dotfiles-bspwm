@@ -38,6 +38,7 @@ menuentry 'Shutdown System' --class shutdown {
 }
 
 EOF"
+sudo cp -f grubcfg/grubd/* /etc/grub.d/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
