@@ -23,20 +23,32 @@ bspc config focus_follows_pointer true
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# 1st desktop
+# workspace 1 (Terminals)
 bspc rule -a Alacritty desktop='^1' follow=on focus=on
 
-# 2nd desktop
+# workspace 2 (Internet Browser)
 declare -a web=(firefox discord)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
 
-# 3rd desktop
+# workspace 3 (File Manager)
 bspc rule -a Pcmanfm desktop='^3' follow=on focus=on
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+# workspace 4 (Text Editor)
+declare -a office=(Visual Studio Code)
+for i in ${office[@]}; do
+    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
+# workspace 5 (Settings)
+declare -a settings=(GParted Lxappearance Lxtask Lxrandr Arandr \
+Pavucontrol)
+for i in ${settings[@]}; do
+    bspc rule -a $i desktop='^5' follow=on focus=on; done
+
+# workspace 6 (Media)
+declare -a media=(vlc obs mpv mplayer lxmusic Gimp Gimp-2.10)
+for i in ${media[@]}; do
+    bspc rule -a $i desktop='^6' follow=on focus=on; done
 
 bspc rule -a Viewnior state=floating follow=on focus=on
 bspc rule -a Pcmanfm state=floating follow=on focus=on
