@@ -16,6 +16,7 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 yay -Sy --noconfirm - < aur.txt
 
 # enable services
+sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable iwd.service
 sudo systemctl start iwd.service
 
