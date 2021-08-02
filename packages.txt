@@ -1,4 +1,5 @@
 base-devel
+python-pip
 git
 broadcom-wl
 iwd

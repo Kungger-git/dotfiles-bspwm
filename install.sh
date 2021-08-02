@@ -26,11 +26,21 @@ sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 # scripts
 sudo cp -f scripts/* /usr/local/bin/
 
-# copies grub config and updates it
+# writes grub menu entries, copies grub, themes and updates it
+sudo bash -c "cat >> '/etc/grub.d/40_custom' <<-EOF
+
+menuentry 'Reboot System' --class restart {
+    reboot
+}
+
+menuentry 'Shutdown System' --class shutdown {
+    halt
+}
+
+EOF"
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
 sudo grub-mkdir -o /boot/grub/grub.cfg
-sudo cp -f grubcfg/grub.cfg /boot/grub/grub.cfg
 
 # write to iwd
 echo "[General]
@@ -83,7 +93,3 @@ fi
 # clone zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# install python3 pip
-git clone https://github.com/KungPaoChick/arch-pip-setup.git ~/.pip-setup; cd ~/.pip-setup
-bash setup.sh; cd; rm -rf ~/.pip-setup/; cd ~/arch-setup/
