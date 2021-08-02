@@ -19,6 +19,7 @@ vlc
 qbittorrent
 qbittorrent-nox
 nitrogen
+archlinux-keyring
 archlinux-wallpaper
 xf86-input-libinput
 xf86-video-fbdev
