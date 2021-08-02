@@ -6,7 +6,6 @@ unimatrix-git
 tty-clock
 bpytop
 dracula-gtk-theme
-blight
 ksuperkey
 toilet
 xfce-polkit
