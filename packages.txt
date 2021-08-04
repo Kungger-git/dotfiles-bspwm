@@ -12,6 +12,7 @@ nm-connection-editor
 xdg-user-dirs
 xorg
 xorg-xinit
+arandr
 neofetch
 cmatrix
 firefox
