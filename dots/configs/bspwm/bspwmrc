@@ -24,7 +24,9 @@ ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # workspace 1 (Terminals)
-bspc rule -a Alacritty desktop='^1' follow=on focus=on
+declare -a terminal=(Alacritty Xfce4-terminal)
+for i in ${terminal[@]}; do
+    bspc rule -a $i desktop='^1' follow=on focus=on; done
 
 # workspace 2 (Internet Browser)
 declare -a web=(firefox discord)
