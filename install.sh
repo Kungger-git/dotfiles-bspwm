@@ -1,5 +1,8 @@
 #!/bin/env bash
 
+# replaces default pacman.conf with better one
+sudo cp -f pacman.conf /etc/
+
 # full upgrade
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
