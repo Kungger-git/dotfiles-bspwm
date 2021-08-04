@@ -52,6 +52,8 @@ declare -a media=(vlc obs mpv mplayer lxmusic Gimp Gimp-2.10)
 for i in ${media[@]}; do
     bspc rule -a $i desktop='^6' follow=on focus=on; done
 
+bspc rule -a Lxappearance state=floating follow=on focus=on
+bspc rule -a Arandr state=floating follow=on focus=on
 bspc rule -a Viewnior state=floating follow=on focus=on
 bspc rule -a Pcmanfm state=floating follow=on focus=on
 bspc rule -a Nm-connection-editor state=floating follow=on focus=on
@@ -63,7 +65,7 @@ killall -9 sxhkd dunst xfce4-power-manager
 
 # Launch notification daemon
 dunst \
--geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 8" \
+-geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 10" \
 -lb "#2E3440" -lf "#D8DEE9" -lfr "#81A1C1" \
 -nb "#2E3440" -nf "#D8DEE9" -nfr "#81A1C1" \
 -cb "#2E3440" -cf "#BF616A" -cfr "#BF616A" &

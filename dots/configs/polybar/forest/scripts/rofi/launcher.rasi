@@ -8,9 +8,9 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+	font:							"Source Code Pro Medium 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"Numix Circle";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -48,7 +48,7 @@ entry {
     placeholder-color:              @fg;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search...";
+    placeholder:                    "Search Applications...";
 	padding: 						0px 0px 0px 5px;
     blink:                          true;
 }
@@ -70,8 +70,8 @@ listview {
     padding:                        0px;
     columns:                        1;
     lines:                          6;
-    spacing:                        5px;
-    cycle:                          true;
+    spacing:                        4px;
+    cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
 }
