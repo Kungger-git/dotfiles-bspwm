@@ -32,10 +32,8 @@ sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 # scripts
 sudo cp -f scripts/* /usr/local/bin/
 
-# writes pwfeedback to sudoers file
-sudo bash -c "cat >> '/etc/sudoers' <<-EOF
-Defaults env_reset,pwfeedback
-EOF"
+# Adds pw_feedback to sudoers.d
+sudo cp -f 01_pw_feedback /etc/sudoers.d/
 
 # writes grub menu entries, copies grub, themes and updates it
 sudo bash -c "cat >> '/etc/grub.d/40_custom' <<-EOF
