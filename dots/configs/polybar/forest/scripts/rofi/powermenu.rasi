@@ -45,8 +45,8 @@ textbox-prompt-colon {
 	padding: 						0px;
 	background-color: 				@bga;
 	text-color: 					@ac;
-	expand: false;
-	str: "";
+	expand:                         false;
+	str:                            "";
 	font:							"feather 12";
 }
 

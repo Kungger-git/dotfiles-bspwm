@@ -17,6 +17,7 @@ neofetch
 cmatrix
 firefox
 vlc
+obs-studio
 qbittorrent
 qbittorrent-nox
 nitrogen
@@ -64,6 +65,8 @@ terminus-font
 ttf-dejavu
 ncdu
 dunst
+maim
+xclip
 scrot
 virtualbox-guest-utils
 geany
