@@ -1,6 +1,7 @@
 networkmanager-dmenu
 betterlockscreen
 pfetch
+shell-color-scripts
 cava
 unimatrix-git
 tty-clock

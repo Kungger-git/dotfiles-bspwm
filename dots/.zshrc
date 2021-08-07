@@ -103,5 +103,4 @@ alias ls='ls --color=always -rthla'
 alias matrix='unimatrix -f -l ocCgGkS -s 96'
 alias clock='tty-clock -sct'
 
-pfetch
-
+colorscript -r
