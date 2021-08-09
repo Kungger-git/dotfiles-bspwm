@@ -51,5 +51,5 @@ fi
 # custom
 bash $HOME/.fehbg
 udiskie &
-picom -f &
+picom --config $HOME/.config/picom/picom.conf &
 exec bspwm

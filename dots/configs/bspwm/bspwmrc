@@ -61,7 +61,7 @@ bspc rule -a Nm-connection-editor state=floating follow=on focus=on
 ## Autostart
 
 # Kill if already running
-killall -9 sxhkd dunst xfce4-power-manager
+killall -9 picom sxhkd dunst xfce4-power-manager
 
 # Launch notification daemon
 dunst \
@@ -92,3 +92,6 @@ betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
 
 # Start mpd
 exec mpd &
+
+# start compositor
+picom --config $HOME/.config/picom/picom.conf &
