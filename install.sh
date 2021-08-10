@@ -19,12 +19,16 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 yay -Sy --noconfirm - < aur.txt
 
 # enable services
+sudo systemctl enable lightdm
 sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable iwd.service
 sudo systemctl start iwd.service
 
 sudo systemctl enable systemd-resolved.service
 sudo systemctl start systemd-resolved.service
+
+# lightdm configuration
+sudo cp -f lightdm/* /etc/lightdm/
 
 # touchpad configuration
 sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
