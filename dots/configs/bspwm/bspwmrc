@@ -93,5 +93,8 @@ betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
 # Start mpd
 exec mpd &
 
+# Start udiskie
+udiskie &
+
 # start compositor
 picom --config $HOME/.config/picom/picom.conf &
