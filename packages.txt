@@ -33,8 +33,6 @@ xf86-video-nouveau
 nvidia
 nvidia-utils
 nvidia-settings
-lightdm
-lightdm-webkit2-greeter
 bspwm
 sxhkd
 dmenu
