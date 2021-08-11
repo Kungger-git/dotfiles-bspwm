@@ -51,6 +51,7 @@ EOF"
 sudo cp -f grubcfg/grubd/* /etc/grub.d/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
+sudo mkinitcpio -p linux
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # write to iwd

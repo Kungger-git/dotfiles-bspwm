@@ -17,4 +17,5 @@ spotify
 minecraft-launcher
 lightdm-webkit-theme-aether
 plymouth
+plymouth-theme-abstract-ring-git
 polybar
