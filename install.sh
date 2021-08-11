@@ -51,6 +51,9 @@ EOF"
 sudo cp -f grubcfg/grubd/* /etc/grub.d/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
+
+# plymouth
+sudo plymouth-set-default-theme -R abstract_ring
 sudo mkinitcpio -p linux
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
