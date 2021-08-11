@@ -15,4 +15,6 @@ visual-studio-code-bin
 discord
 spotify
 minecraft-launcher
+lightdm-webkit-theme-aether
+plymouth
 polybar

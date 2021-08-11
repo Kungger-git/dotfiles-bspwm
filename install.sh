@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 # replaces default pacman.conf with better one
-sudo cp -f pacman.conf /etc/
+sudo cp -f systemfiles/pacman.conf /etc/
 
 # full upgrade
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
@@ -19,12 +19,13 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 yay -Sy --noconfirm - < aur.txt
 
 # enable services
-sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable iwd.service
-sudo systemctl start iwd.service
+sudo systemctl enable systemd-resolved.service 
+sudo systemctl enable betterlockscreen@$USER.service
+sudo systemctl enable lightdm-plymouth.service
 
-sudo systemctl enable systemd-resolved.service
-sudo systemctl start systemd-resolved.service
+# mkinitcpio configuration
+sudo cp -f systemfiles/mkinitcpio.conf /etc/
 
 # touchpad configuration
 sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
@@ -33,7 +34,7 @@ sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 sudo cp -f scripts/* /usr/local/bin/
 
 # Adds pw_feedback to sudoers.d
-sudo cp -f 01_pw_feedback /etc/sudoers.d/
+sudo cp -f systemfiles/01_pw_feedback /etc/sudoers.d/
 
 # writes grub menu entries, copies grub, themes and updates it
 sudo bash -c "cat >> '/etc/grub.d/40_custom' <<-EOF
