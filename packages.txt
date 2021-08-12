@@ -84,5 +84,3 @@ jq
 gtk-engine-murrine
 gparted
 ueberzug
-lightdm
-lightdm-webkit2-greeter
