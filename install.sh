@@ -25,7 +25,7 @@ sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable lxdm-plymouth.service
 
 # mkinitcpio configuration
-sudo cp -f systemfiles/mkinitcpio.conf
+sudo cp -f systemfiles/mkinitcpio.conf /etc/
 
 # touchpad configuration
 sudo cp -f systemfiles/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
