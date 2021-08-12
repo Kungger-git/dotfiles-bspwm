@@ -15,8 +15,6 @@ visual-studio-code-bin
 discord
 spotify
 minecraft-launcher
+plymouth
+plymouth-theme-colorful-loop-git
 polybar
-
-# Optional Packages
-#plymouth
-#plymouth-theme-colorful-loop-git
