@@ -51,11 +51,13 @@ EOF"
 sudo cp -f grubcfg/grubd/* /etc/grub.d/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # plymouth
+sudo cp -f lxdm/lxdm.conf /etc/lxdm/
+sudo cp -rf lxdm/lxdm-theme/* /usr/share/lxdm/themes/
 sudo plymouth-set-default-theme -R colorful_loop
 sudo mkinitcpio -p linux
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # write to iwd
 echo "[General]
