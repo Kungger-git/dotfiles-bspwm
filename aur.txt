@@ -16,3 +16,7 @@ discord
 spotify
 minecraft-launcher
 polybar
+
+# Optional Packages
+#plymouth
+#plymouth-theme-colorful-loop-git

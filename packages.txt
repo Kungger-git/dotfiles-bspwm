@@ -84,3 +84,6 @@ jq
 gtk-engine-murrine
 gparted
 ueberzug
+
+# Optional packages
+#lxdm-gtk3

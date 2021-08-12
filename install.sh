@@ -22,9 +22,13 @@ yay -Sy --noconfirm - < aur.txt
 sudo systemctl enable iwd.service
 sudo systemctl enable systemd-resolved.service 
 sudo systemctl enable betterlockscreen@$USER.service
+#sudo systemctl enable lxdm-plymouth.service
+
+# mkinitcpio configuration
+#sudo cp -f systemfiles/mkinitcpio.conf
 
 # touchpad configuration
-sudo cp -f dots/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
+sudo cp -f systemfiles/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 
 # scripts
 sudo cp -f scripts/* /usr/local/bin/
@@ -47,6 +51,10 @@ EOF"
 sudo cp -f grubcfg/grubd/* /etc/grub.d/
 sudo cp -f grubcfg/grub /etc/default/
 sudo cp -rf grubcfg/themes/default /boot/grub/themes/
+
+# plymouth
+#sudo plymouth-set-default-theme -R colorful_loop
+#sudo mkinitcpio -p linux
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # write to iwd
@@ -78,6 +86,7 @@ cp dots/.xinitrc $HOME
 cp dots/.gtkrc-2.0 $HOME
 cp dots/.hushlogin $HOME
 cp dots/.fehbg $HOME
+cp dots/.dmrc $HOME
 cp -rf dots/.ncmpcpp $HOME
 cp -rf dots/.mpd $HOME
 
