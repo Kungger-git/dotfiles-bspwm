@@ -8,6 +8,7 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
 # install system packages
 sudo pacman -Sy --needed --noconfirm - < packages.txt
+sudo pacman -R --noconfirm i3-wm
 
 # install yay-git
 git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..
