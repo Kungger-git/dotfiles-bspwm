@@ -85,3 +85,4 @@ gtk-engine-murrine
 gparted
 ueberzug
 lxdm-gtk3
+libreoffice-fresh
