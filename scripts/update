@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# update pacman packages
+sudo pacman -Syy
+sudo pacman -Syu --noconfirm
+
+# update aur packages
+yay -Syu --noconfirm
+
+# delete orphans and cache
+sudo pacman -Rns --noconfirm $(pacman -Qtdq)
+sudo pacman -Sc --noconfirm
+yay -Sc --noconfirm
