@@ -102,3 +102,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 # last orphan delete and cache delete
 sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm
+
+# final
+clear
+
+read -p "Reboot Now? (Required) [Y/n] " reb
+if [[ "$reb" == "" || "$reb" == "Y" || "$reb" == "y" ]]; then
+    sudo reboot now
+else
+    echo "\nAbort!\n"
+fi
