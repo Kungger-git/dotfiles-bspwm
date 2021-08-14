@@ -20,10 +20,7 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 yay -Sy --noconfirm - < aur.txt
 
 # enable services
-sudo systemctl enable iwd.service
-sudo systemctl enable systemd-resolved.service 
-sudo systemctl enable betterlockscreen@$USER.service
-sudo systemctl enable lxdm-plymouth.service
+sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
 
 # mkinitcpio configuration
 sudo cp -f systemfiles/mkinitcpio.conf /etc/
