@@ -21,7 +21,6 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 yay -Sy --needed --noconfirm - < aur.txt
 sudo pacman -R --noconfirm i3-wm
 
-
 # enable services
 sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
 
@@ -74,7 +73,6 @@ echo "wl" | sudo tee /etc/modules-load.d/wl.conf
 # make user dirs
 xdg-user-dirs-update
 
-
 # installs oh-my-zsh and changes shell to zsh
 curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh; chsh -s /bin/zsh
@@ -103,4 +101,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # last orphan delete and cache delete
-sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Scc
+sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm
