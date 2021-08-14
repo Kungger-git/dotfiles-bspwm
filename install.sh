@@ -21,6 +21,9 @@ sudo pacman -R --noconfirm i3-wm
 # enable services
 sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
 
+# start couple services
+sudo systemctl start iwd.service systemd-resolved.service
+
 # mkinitcpio configuration
 sudo cp -f systemfiles/mkinitcpio.conf /etc/
 
@@ -75,7 +78,17 @@ curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
 # copy home dots
-cp -rf dots/* $HOME
+cp -rf dots/.zshrc     \
+        dots/.vimrc    \
+        dots/.xinitrc  \
+        dots/.hushlogin\
+        dots/.gtkrc-2.0\
+        dots/.gitconfig\
+        dots/.fehbg    \
+        dots/.dmrc     \
+        dots/.ncmpcpp/ \
+        dots/.mpd/     \
+        dots/.config/ $HOME
 
 # copy wallpapers to /usr/share/backgrounds/
 sudo cp -rf wallpapers /usr/share/backgrounds/
