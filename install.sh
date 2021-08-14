@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+set -e
+
 # replaces default pacman.conf with better one
 sudo cp -f systemfiles/pacman.conf /etc/
 
@@ -79,16 +81,7 @@ curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
 # copy home dots
-cp dots/.zshrc $HOME
-cp dots/.vimrc $HOME
-cp dots/.gitconfig $HOME
-cp dots/.xinitrc $HOME
-cp dots/.gtkrc-2.0 $HOME
-cp dots/.hushlogin $HOME
-cp dots/.fehbg $HOME
-cp dots/.dmrc $HOME
-cp -rf dots/.ncmpcpp $HOME
-cp -rf dots/.mpd $HOME
+cp -rf dots/* $HOME
 
 # copy wallpapers to /usr/share/backgrounds/
 sudo cp -rf wallpapers /usr/share/backgrounds/
