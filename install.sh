@@ -1,7 +1,5 @@
 #!/bin/env bash
 
-set -e
-
 # replaces default pacman.conf with better one
 sudo cp -f systemfiles/pacman.conf /etc/
 
@@ -12,17 +10,19 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
 # install yay-git
-git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..; rm -rf yay-git/
+git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..
+
+# remove orphans and yay-git folder
+sudo pacman -Rns --noconfirm $(pacman -Qtdq); rm -rf yay-git/
 
 # install aur packages
-yay -Sy --needed --noconfirm - < aur.txt
-sudo pacman -R --noconfirm i3-wm
+yay -Sy --noconfirm - < aur.txt
 
 # enable services
-sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
-
-# start couple services
-sudo systemctl start iwd.service systemd-resolved.service
+sudo systemctl enable iwd.service
+sudo systemctl enable systemd-resolved.service 
+sudo systemctl enable betterlockscreen@$USER.service
+sudo systemctl enable lxdm-plymouth.service
 
 # mkinitcpio configuration
 sudo cp -f systemfiles/mkinitcpio.conf /etc/
@@ -73,22 +73,24 @@ echo "wl" | sudo tee /etc/modules-load.d/wl.conf
 # make user dirs
 xdg-user-dirs-update
 
+# copy configs
+cp -r dots/configs/* $HOME/.config/
+
 # installs oh-my-zsh and changes shell to zsh
 curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh; chsh -s /bin/zsh
 
 # copy home dots
-cp -rf dots/.zshrc    \
-       dots/.vimrc    \
-       dots/.xinitrc  \
-       dots/.hushlogin\
-       dots/.gtkrc-2.0\
-       dots/.gitconfig\
-       dots/.fehbg    \
-       dots/.dmrc     \
-       dots/.ncmpcpp/ \
-       dots/.mpd/     \
-       dots/.config/ $HOME
+cp dots/.zshrc $HOME
+cp dots/.vimrc $HOME
+cp dots/.gitconfig $HOME
+cp dots/.xinitrc $HOME
+cp dots/.gtkrc-2.0 $HOME
+cp dots/.hushlogin $HOME
+cp dots/.fehbg $HOME
+cp dots/.dmrc $HOME
+cp -rf dots/.ncmpcpp $HOME
+cp -rf dots/.mpd $HOME
 
 # copy wallpapers to /usr/share/backgrounds/
 sudo cp -rf wallpapers /usr/share/backgrounds/
@@ -109,16 +111,3 @@ fi
 # clone zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# last orphan delete and cache delete
-sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm
-
-# final
-clear
-
-read -p "Reboot Now? (Required) [Y/n] " reb
-if [[ "$reb" == "" || "$reb" == "Y" || "$reb" == "y" ]]; then
-    sudo reboot now
-else
-    echo "\nAbort!\n"
-fi
