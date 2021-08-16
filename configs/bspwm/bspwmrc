@@ -87,9 +87,6 @@ bash $HOME/.fehbg
 # Enable power management
 xfce4-power-manager &
 
-# initialize betterlockscreen
-betterlockscreen -u /usr/share/backgrounds/archlinux/small.png
-
 # Start mpd
 exec mpd &
 
