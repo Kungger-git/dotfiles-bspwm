@@ -2,8 +2,14 @@
 
 set -e
 
-# replaces default pacman.conf with better one
-sudo cp -f systemfiles/pacman.conf /etc/
+# copies pacman.conf and mkinitcpio.conf
+sudo cp -f systemfiles/pacman.conf \
+           systemfiles/mkinitcpio.conf /etc/
+
+# Adds pw_feedback to sudoers.d
+sudo cp -f systemfiles/01_pw_feedback /etc/sudoers.d/
+
+reset; echo "Welcome!"; sleep 3
 
 # full upgrade
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
@@ -16,7 +22,6 @@ git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noco
 
 # install aur packages
 yay -Sy --needed --noconfirm - < aur.txt
-sudo pacman -R --noconfirm i3-wm
 
 # enable services
 sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
@@ -24,17 +29,14 @@ sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USE
 # start couple services
 sudo systemctl start iwd.service systemd-resolved.service
 
-# mkinitcpio configuration
-sudo cp -f systemfiles/mkinitcpio.conf /etc/
-
 # touchpad configuration
 sudo cp -f systemfiles/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 
 # scripts
 sudo cp -f scripts/* /usr/local/bin/
 
-# Adds pw_feedback to sudoers.d
-sudo cp -f systemfiles/01_pw_feedback /etc/sudoers.d/
+# copy wallpapers to /usr/share/backgrounds/
+sudo cp -rf wallpapers /usr/share/backgrounds/
 
 # writes grub menu entries, copies grub, themes and updates it
 sudo bash -c "cat >> '/etc/grub.d/40_custom' <<-EOF
@@ -87,11 +89,9 @@ cp -rf dots/.zshrc    \
        dots/.fehbg    \
        dots/.dmrc     \
        dots/.ncmpcpp/ \
-       dots/.mpd/     \
-       dots/configs/* $HOME/.config/
-
-# copy wallpapers to /usr/share/backgrounds/
-sudo cp -rf wallpapers /usr/share/backgrounds/
+       dots/.mpd/ $HOME
+       
+cp -rf configs/* $HOME/.config/
 
 # copy songs
 cp songs/* $HOME/Music
