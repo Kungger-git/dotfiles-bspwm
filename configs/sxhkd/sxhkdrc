@@ -24,7 +24,7 @@ super + n
 
 # lockscreen
 control + alt + l
-    betterlockscreen -l
+    lock
 
 # Rofi Menus
 super + {x}
