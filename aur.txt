@@ -1,5 +1,5 @@
 networkmanager-dmenu
-betterlockscreen
+i3lock-color
 pfetch
 shell-color-scripts
 cava
