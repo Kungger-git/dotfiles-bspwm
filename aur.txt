@@ -1,5 +1,6 @@
 networkmanager-dmenu
 i3lock-color
+cowfortune
 pfetch
 shell-color-scripts
 cava
