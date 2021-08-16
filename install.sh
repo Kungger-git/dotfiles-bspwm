@@ -24,7 +24,7 @@ git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noco
 yay -Sy --needed --noconfirm - < aur.txt
 
 # enable services
-sudo systemctl enable iwd.service systemd-resolved.service betterlockscreen@$USER.service lxdm-plymouth.service
+sudo systemctl enable iwd.service systemd-resolved.service lxdm-plymouth.service
 
 # start couple services
 sudo systemctl start iwd.service systemd-resolved.service
