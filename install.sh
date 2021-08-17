@@ -22,7 +22,7 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
 # install yay-git
-#git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..; rm -rf yay-git/
+git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..; rm -rf yay-git/
 
 # install aur packages
 yay -Sy --needed --noconfirm - < aur.txt
@@ -115,7 +115,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # last orphan delete and cache delete
-sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm
+sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm; sudo pacman -R --noconfirm i3-wm
 
 # final
 clear
