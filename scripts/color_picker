@@ -31,6 +31,6 @@ convert -size 100x100 xc:"$color" -gravity Center -pointsize 20 -font Iosevka -f
 # copy color code to clipboard
 echo $color | tr -d "\n" | xclip -selection clipboard
 # notify about it
-dunstify -u low -i /usr/share/icons/Archcraft/actions/32/color-management.svg "$color, copied to clipboard."
+dunstify -u low -i /usr/share/icons/Papirus/actions/color-select-symbolic.svg "$color, copied to clipboard."
 # display image using an image viewer 
 feh --borderless --geometry=100x100 --title="$color" $image &>/dev/null &
