@@ -34,8 +34,8 @@ control + alt {t}
     sh ~/.config/polybar/forest/scripts/style-switch.sh
 
 # Launch Apps
-super + shift + {f,w,e,d}
-    {pcmanfm,firefox,code,discord}
+super + shift + {f,w,c,d,s}
+    {pcmanfm,firefox,code,discord,spotify}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
