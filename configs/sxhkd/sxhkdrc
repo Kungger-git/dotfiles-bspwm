@@ -27,8 +27,8 @@ control + alt + l
     lock
 
 # Rofi Menus
-super + {x}
-    sh ~/.config/polybar/forest/scripts/powermenu.sh
+super + {x,m}
+    sh ~/.config/polybar/forest/scripts/{powermenu.sh,mpd}
 
 control + alt {t}
     sh ~/.config/polybar/forest/scripts/style-switch.sh

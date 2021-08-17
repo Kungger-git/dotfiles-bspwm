@@ -2,6 +2,7 @@ networkmanager-dmenu
 i3lock-color
 cowfortune
 bash-pipes
+cbonsai
 pfetch
 shell-color-scripts
 cava
