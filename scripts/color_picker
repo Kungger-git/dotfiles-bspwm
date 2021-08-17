@@ -27,10 +27,8 @@ hex_to_rgb $hex
 calculate_text_color
 
 # generate color image with code
-convert -size 100x100 xc:"$color" -gravity Center -pointsize 20 -font Iosevka -fill "$text" -annotate +0+0 "$color" $image
+#convert -size 100x100 xc:"$color" -gravity Center -pointsize 20 -fill "$text" -annotate +0+0 "$color" $image
 # copy color code to clipboard
 echo $color | tr -d "\n" | xclip -selection clipboard
 # notify about it
-dunstify -u low -i /usr/share/icons/Papirus/actions/color-select-symbolic.svg "$color, copied to clipboard."
-# display image using an image viewer 
-feh --borderless --geometry=100x100 --title="$color" $image &>/dev/null &
+dunstify -u low -i /usr/share/icons/Papirus/symbolic/actions/color-select-symbolic.svg "$color, copied to clipboard."
