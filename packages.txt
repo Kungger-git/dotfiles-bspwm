@@ -81,6 +81,7 @@ ncmpcpp
 mpd
 mpc
 jq
+calc
 gtk-engine-murrine
 gparted
 ueberzug
