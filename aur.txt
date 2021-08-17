@@ -5,6 +5,7 @@ bash-pipes
 pfetch
 shell-color-scripts
 cava
+colorpicker
 unimatrix-git
 tty-clock
 bpytop
