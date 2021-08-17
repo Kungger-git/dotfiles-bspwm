@@ -1,5 +1,4 @@
 #!/bin/env bash
-
 set -e
 
 # copies pacman.conf and mkinitcpio.conf
@@ -121,9 +120,9 @@ sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -
 # final
 clear
 
-read -p "Reboot Now? (Required) [Y/n] " reb
+read -p "$USER!, Reboot Now? (Required) [Y/n] " reb
 if [[ "$reb" == "" || "$reb" == "Y" || "$reb" == "y" ]]; then
     sudo reboot now
 else
-    echo "\nAbort!\n"
+    printf "\nAbort!\n"
 fi
