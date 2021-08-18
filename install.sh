@@ -45,15 +45,16 @@ if ! command -v $HELPER %> /dev/null; then
 fi
 
 # install aur packages
-yay -Sy --needed --noconfirm - < aur.txt
+$HELPER -Sy --needed --noconfirm - < aur.txt
 
 cat recommended_aur.txt
 read -p "Would you like to download these recommended aur packages? [Y/n] " recd
 
 if [[ "$recd" == "" || "$recd" == "Y" || "$recd" == "y" ]]; then
-    yay -Sy --needed --noconfirm - < recommended_aur.txt
+    $HELPER -Sy --needed --noconfirm - < recommended_aur.txt
 else
     printf "\nAbort!\n"
+    echo "You can install them later by doing: ($HELPER -S - < recommended_aur.txt)"
 fi
 
 # enable services
@@ -144,7 +145,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # last orphan delete and cache delete
-sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; yay -Sc --noconfirm; sudo pacman -R --noconfirm i3-wm
+sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; $HELPER -Sc --noconfirm; sudo pacman -R --noconfirm i3-wm
 
 # final
 clear
