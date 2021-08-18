@@ -1,0 +1,14 @@
+cowfortune
+bash-pipes
+cbonsai
+pfetch
+cava
+unimatrix-git
+tty-clock
+bpytop
+toilet
+visual-studio-code-bin
+discord
+spotify
+minecraft-launcher
+shell-color-scripts
