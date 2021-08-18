@@ -1,9 +1,9 @@
-networkmanager-dmenu
-i3lock-color
 colorpicker
-numix-circle-icon-theme-git
+i3lock-color
 ksuperkey
-xfce-polkit
+networkmanager-dmenu
+numix-circle-icon-theme-git
 plymouth
 plymouth-theme-colorful-loop-git
 polybar
+xfce-polkit
