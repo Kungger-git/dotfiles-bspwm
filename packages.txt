@@ -86,4 +86,5 @@ xfce4-settings
 xfce4-terminal
 xorg
 xorg-xinit
+youtube-dl
 zsh
