@@ -38,7 +38,7 @@ if [ $sel -eq 2 ]; then
     HELPER="paru"
 fi
 
-if ! command -v $HELPER %> /dev/null; then
+if ! command -v $HELPER &> /dev/null; then
     printf "\n\nWe'll be installing $HELPER then.\n\n"
         git clone https://aur.archlinux.org/$HELPER.git $HOME/.srcs/$HELPER
         (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
