@@ -21,11 +21,40 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 # install system packages
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
-# install yay-git
-git clone https://aur.archlinux.org/yay-git.git; cd yay-git/; makepkg -si --noconfirm; cd ..; rm -rf yay-git/
+# install an aur helper
+HELPER="yay"
+mkdir -p $HOME/.srcs
+
+echo "####################
+
+1.) yay     2.) paru
+
+####################"
+
+printf  "\n\nAn AUR helper is essential to install required packages."
+read -r -p "Select an aur helper (Default: yay) " sel
+
+if [ $sel -eq 2 ]; then
+    HELPER="paru"
+fi
+
+if ! command -v $HELPER %> /dev/null; then
+    printf "\n\nWe'll be installing $HELPER then.\n\n"
+        git clone https://aur.archlinux.org/$HELPER.git $HOME/.srcs/$HELPER
+        (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
+fi
 
 # install aur packages
 yay -Sy --needed --noconfirm - < aur.txt
+
+cat recommended_aur.txt
+read -p "Would you like to download these recommended aur packages? [Y/n] " recd
+
+if [[ "$recd" == "" || "$recd" == "Y" || "$recd" == "y" ]]; then
+    yay -Sy --needed --noconfirm - < recommended_aur.txt
+else
+    printf "\nAbort!\n"
+fi
 
 # enable services
 sudo systemctl enable iwd.service systemd-resolved.service lxdm-plymouth.service
