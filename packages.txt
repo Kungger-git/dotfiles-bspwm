@@ -27,6 +27,7 @@ git
 gparted
 grub-customizer
 gtk-engine-murrine
+gtop
 htop
 imagemagick
 inetutils
