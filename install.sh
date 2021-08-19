@@ -148,6 +148,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; $HELPER -Sc --noconfirm; sudo pacman -R --noconfirm i3-wm
 
 # final
+rm -rf $HOME/.srcs/$HELPER
 clear
 
 read -p "$USER!, Reboot Now? (Required) [Y/n] " reb
