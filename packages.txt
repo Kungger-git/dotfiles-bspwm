@@ -39,6 +39,7 @@ lxdm-gtk3
 maim
 mpc
 mpd
+mplayer
 ncdu
 ncmpcpp
 neofetch
