@@ -21,6 +21,16 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 # install system packages
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
+cat recommended_packages.txt
+read -p "Would you like to download these recommended system packages? [Y/n]" recp
+
+if [[ "$recp" == "" || "$recp" == "Y" || "$recp" == "y" ]]; then
+    sudo pacman -Sy --needed --noconfirm - < recommended_packages.txt
+else
+    printf "\nAbort!\n"
+    echo "You can install them later by doing: (sudo pacman -S - < recommended_packages.txt)"
+fi
+
 # install an aur helper
 HELPER="yay"
 mkdir -p $HOME/.srcs
@@ -48,9 +58,9 @@ fi
 $HELPER -Sy --needed --noconfirm - < aur.txt
 
 cat recommended_aur.txt
-read -p "Would you like to download these recommended aur packages? [Y/n] " recd
+read -p "Would you like to download these recommended aur packages? [Y/n] " reca
 
-if [[ "$recd" == "" || "$recd" == "Y" || "$recd" == "y" ]]; then
+if [[ "$reca" == "" || "$reca" == "Y" || "$reca" == "y" ]]; then
     $HELPER -Sy --needed --noconfirm - < recommended_aur.txt
 else
     printf "\nAbort!\n"
