@@ -4,6 +4,10 @@ alsa-plugins
 alsa-tools
 alsa-utils
 arandr
+archlinux-wallpaper
+bluez
+bluez-utils
+bmon
 calc
 ffmpeg
 firefox
@@ -12,13 +16,18 @@ gparted
 gtop
 htop
 imagemagick
+inetutils
 jq
 libreoffice-fresh
 lxappearance
 maim
+mpc
+mpd
 mplayer
 ncdu
+ncmpcpp
 neofetch
+nethogs
 nitrogen
 nm-connection-editor
 nvidia
@@ -36,6 +45,7 @@ qbittorrent-nox
 ranger
 scrot
 tmux
+udiskie
 ueberzug
 viewnior
 vlc

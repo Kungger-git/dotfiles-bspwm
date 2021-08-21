@@ -1,10 +1,6 @@
 adapta-gtk-theme
 alacritty
-archlinux-wallpaper
 base-devel
-bluez
-bluez-utils
-bmon
 broadcom-wl
 bspwm
 curl
