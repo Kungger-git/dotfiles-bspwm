@@ -22,13 +22,13 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
 cat recommended_packages.txt
-read -p "Would you like to download these recommended system packages? [Y/n]" recp
+read -p "Would you like to download these recommended system packages? [y/N] " recp
 
-if [[ "$recp" == "" || "$recp" == "Y" || "$recp" == "y" ]]; then
-    sudo pacman -Sy --needed --noconfirm - < recommended_packages.txt
-else
+if [[ "$recp" == "" || "$recp" == "N" || "$recp" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: (sudo pacman -S - < recommended_packages.txt)"
+else
+    sudo pacman -Sy --needed --noconfirm - < recommended_packages.txt
 fi
 
 # install an aur helper
@@ -58,13 +58,13 @@ fi
 $HELPER -Sy --needed --noconfirm - < aur.txt
 
 cat recommended_aur.txt
-read -p "Would you like to download these recommended aur packages? [Y/n] " reca
+read -p "Would you like to download these recommended aur packages? [y/N] " reca
 
-if [[ "$reca" == "" || "$reca" == "Y" || "$reca" == "y" ]]; then
-    $HELPER -Sy --needed --noconfirm - < recommended_aur.txt
-else
+if [[ "$reca" == "" || "$reca" == "N" || "$reca" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: ($HELPER -S - < recommended_aur.txt)"
+else
+    $HELPER -Sy --needed --noconfirm - < recommended_aur.txt
 fi
 
 # enable services
