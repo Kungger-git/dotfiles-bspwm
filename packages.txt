@@ -1,5 +1,6 @@
 adapta-gtk-theme
 alacritty
+archlinux-wallpaper
 base-devel
 broadcom-wl
 bspwm

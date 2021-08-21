@@ -4,7 +4,6 @@ alsa-plugins
 alsa-tools
 alsa-utils
 arandr
-archlinux-wallpaper
 bluez
 bluez-utils
 bmon
