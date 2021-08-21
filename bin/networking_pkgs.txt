@@ -1,0 +1,8 @@
+bluez
+bluez-utils
+bmon
+broadcom-wl
+inetutils
+iwd
+nethogs
+nm-connection-editor

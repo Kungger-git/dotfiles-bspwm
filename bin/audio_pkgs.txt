@@ -1,0 +1,11 @@
+alsa-plugins
+alsa-tools
+alsa-utils
+mpc
+mpd
+mplayer
+ncmpcpp
+pavucontrol
+pulseaudio
+pulseaudio-alsa
+pulseaudio-equalizer-ladspa

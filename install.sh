@@ -20,11 +20,11 @@ sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
 
 # choose video driver
-echo "####################
+echo "####################################################################
 
 1.) xf86-video-intel    2.) xf86-video-amdgpu   3.) nvidia  4.) Skip
 
-####################"
+####################################################################"
 
 read -r -p "Choose your video card driver(default 1)(will not re-install): " vidri
 
@@ -42,11 +42,11 @@ case $vidri in
         ;;
 
 [4])
-        DRIVER=""
+        DRIVER="xorg-xinit"
         ;;
 
 [*])
-        DRIVER='xorg-xinit'
+        DRIVER='xf86-video-intel'
         ;;
 esac
 
@@ -103,10 +103,7 @@ else
 fi
 
 # enable services
-sudo systemctl enable iwd.service systemd-resolved.service lxdm-plymouth.service
-
-# start couple services
-sudo systemctl start iwd.service systemd-resolved.service
+sudo systemctl enable lxdm-plymouth.service
 
 # touchpad configuration
 sudo cp -f systemfiles/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
@@ -115,6 +112,7 @@ sudo cp -f systemfiles/02-touchpad-ttc.conf /etc/X11/xorg.conf.d/
 sudo cp -f scripts/* /usr/local/bin/
 
 # copy wallpapers to /usr/share/backgrounds/
+sudo mkdir -p /usr/share/backgrounds/
 sudo cp -rf wallpapers /usr/share/backgrounds/
 
 # writes grub menu entries, copies grub, themes and updates it
@@ -140,19 +138,28 @@ sudo cp -rf lxdm/lxdm-theme/* /usr/share/lxdm/themes/
 sudo plymouth-set-default-theme -R colorful_loop
 sudo mkinitcpio -p linux
 
-# write to iwd
-echo "[General]
-EnableNetworkConfiguration=true
-
-[Network]
-NameResolvingService=systemd
-" | sudo tee /etc/iwd/main.conf
-
-# write to modules
-echo "wl" | sudo tee /etc/modules-load.d/wl.conf
-
 # make user dirs
 xdg-user-dirs-update
+
+# prompt to install networking tools
+read -p "Would you like to install networking tools? [y/N] " netw
+
+if [[ "$netw" == "" || "$netw" == "N" || "$netw" == "n" ]]; then
+    printf "\nAbort!\n"
+    echo "You can find the networking setup script in the bin folder."
+else
+     (cd bin/; ./networking_setup.sh)
+fi
+
+# prompt to install audio tools and applications
+read -p "Would you like to install audio tools and applications? [y/N] " aud
+
+if [[ "$aud" == "" || "$aud" == "N" || "$aud" == "n" ]]; then
+    printf "\nAbort!\n"
+    echo "You can find the audio setup script in the bin folder."
+else
+    (cd bin/; ./audio_setup.sh)
+fi
 
 # installs oh-my-zsh and changes shell to zsh
 curl -L http://install.ohmyz.sh | sh
