@@ -2,5 +2,5 @@ i3lock-color
 ksuperkey
 networkmanager-dmenu
 plymouth
-plymouth-theme-colorful-loop-git
+plymouth-theme-arch10
 polybar

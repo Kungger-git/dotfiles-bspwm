@@ -135,8 +135,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # plymouth
 sudo cp -f lxdm/lxdm.conf /etc/lxdm/
 sudo cp -rf lxdm/lxdm-theme/* /usr/share/lxdm/themes/
-sudo plymouth-set-default-theme -R colorful_loop
-sudo mkinitcpio -p linux
+sudo plymouth-set-default-theme -R arch10
 
 # make user dirs
 xdg-user-dirs-update
