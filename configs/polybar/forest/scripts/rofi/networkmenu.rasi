@@ -10,7 +10,6 @@
 configuration {
 	font:							"Iosevka Nerd Font 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -37,13 +36,13 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						0px 0px 0px 10px;
-	background-color: 				@bga;
+	background-color: 				@bg;
 	text-color: 					@fg;
 }
 
 textbox-prompt-colon {
 	padding: 						0px;
-	background-color: 				@bga;
+	background-color: 				@bg;
 	text-color: 					@ac;
 	expand: false;
 	str: "";
@@ -63,7 +62,7 @@ entry {
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt, entry ];
-    background-color:               @bga;
+    background-color:               @bg;
     text-color:                     @fg;
     expand:                         false;
 	border:							0px 0px 1px 0px;

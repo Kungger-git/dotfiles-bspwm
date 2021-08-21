@@ -28,14 +28,14 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						0px 0px 0px 10px;
-	background-color: 				@bga;
+	background-color: 				@bg;
 	text-color: 					@fg;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
 	str: 							"";
-    background-color:               @bga;
+    background-color:               @bg;
     text-color:                     @ac;
     padding:                        0px;
 	font:							"feather 12";
@@ -43,7 +43,7 @@ textbox-prompt-colon {
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
-    background-color:               @bga;
+    background-color:               @bg;
     text-color:                     @fg;
     expand:                         false;
 	border:							0px 0px 1px 0px;

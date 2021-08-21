@@ -29,7 +29,7 @@ change_color() {
 }
 
 if  [[ $1 = "--default" ]]; then
-	BG="#212B30"
+	BG="#05132D"
 	FG="#C4C7C5"
 	BGA="#263035"
 	SEP="#3F5360"
