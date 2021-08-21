@@ -2,6 +2,7 @@ bash-pipes
 bpytop
 cava
 cbonsai
+colorpicker
 cowfortune
 discord
 minecraft-launcher
@@ -12,3 +13,4 @@ toilet
 tty-clock
 unimatrix-git
 visual-studio-code-bin
+xfce-polkit
