@@ -18,6 +18,37 @@ echo ' #   #  #mmmmm #mmmmm  "mmm"  #mm#  #    # #mmmmm'; sleep 3
 # full upgrade
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
+
+# choose video driver
+echo "####################
+
+1.) xf86-video-intel    2.) xf86-video-amdgpu   3.) nvidia  4.) Skip
+
+####################"
+
+read -r -p "Choose your video card driver(default 1)(will not re-install): " vidri
+
+case $vidri in
+[1])
+        DRIVER='xf86-video-intel xf86-video-nouveau'
+        ;;
+
+[2])
+        DRIVER='xf86-video-amdgpu xf86-video-ati xf86-video-fbdev xf86-video-vesa' 
+        ;;
+
+[3])
+        DRIVER='nvidia nvidia-settings nvidia-utils'
+        ;;
+
+[4])
+        DRIVER='xorg-xinit'
+        ;;
+esac
+
+# installing selected video driver
+sudo pacman -Sy --needed --noconfirm $DRIVER
+
 # install system packages
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
