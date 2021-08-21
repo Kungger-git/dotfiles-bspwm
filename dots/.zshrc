@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$$HOME/.oh-my-zsh"
+export ZSH="/home/kungger/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,8 +100,8 @@ export LC_ALL=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls --color=always -rthla'
-#alias matrix='unimatrix -f -l ocCgGkS -s 96'
-#alias clock='tty-clock -sct'
-#alias pipes='pipes -p 5 -R -t 1 -r 0'
+alias matrix='unimatrix -f -l ocCgGkS -s 96'
+alias clock='tty-clock -sct'
+alias pipes='pipes -p 5 -R -t 1 -r 0'
 
-#colorscript -r
+colorscript -r
