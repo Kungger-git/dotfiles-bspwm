@@ -1,7 +1,6 @@
 i3lock-color
 ksuperkey
 networkmanager-dmenu
-numix-circle-icon-theme-git
 plymouth
 plymouth-theme-colorful-loop-git
 polybar
