@@ -42,6 +42,10 @@ case $vidri in
         ;;
 
 [4])
+        DRIVER=""
+        ;;
+
+[*])
         DRIVER='xorg-xinit'
         ;;
 esac
