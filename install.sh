@@ -15,10 +15,6 @@ echo '" #"# # #mmmmm #      #      #    # # ## # #mmmmm'; sleep 0.2
 echo ' ## ##" #      #      #      #    # # "" # #'; sleep 0.2
 echo ' #   #  #mmmmm #mmmmm  "mmm"  #mm#  #    # #mmmmm'; sleep 3
 
-# full upgrade
-sudo pacman -Syy; sudo pacman -Syu --noconfirm
-
-
 # choose video driver
 echo "####################################################################
 
@@ -28,6 +24,38 @@ echo "####################################################################
 
 read -r -p "Choose your video card driver(default 1)(will not re-install): " vidri
 
+# prompt for installing recommended packages
+cat recommended_packages.txt
+read -p "Would you like to download these recommended system packages? [y/N] " recp
+
+# select an aur helper to install
+HELPER="yay"
+mkdir -p $HOME/.srcs
+
+echo "####################
+
+1.) yay     2.) paru
+
+####################"
+
+printf  "\n\nAn AUR helper is essential to install required packages."
+read -r -p "Select an aur helper (Default: yay) " sel
+
+# prompt for installing recommended aur packages
+cat recommended_aur.txt
+read -p "Would you like to download these recommended aur packages? [y/N] " reca
+
+# prompt to install networking tools and applications
+read -p "Would you like to install networking tools and applications? [y/N] " netw
+
+# prompt to install audio tools and applications
+read -p "Would you like to install audio tools and applications? [y/N] " aud
+
+#
+#
+# post prompt process
+#
+#
 case $vidri in
 [1])
         DRIVER='xf86-video-intel xf86-video-nouveau'
@@ -50,15 +78,16 @@ case $vidri in
         ;;
 esac
 
+# full upgrade
+sudo pacman -Syy; sudo pacman -Syu --noconfirm
+
 # installing selected video driver
 sudo pacman -Sy --needed --noconfirm $DRIVER
 
 # install system packages
 sudo pacman -Sy --needed --noconfirm - < packages.txt
 
-cat recommended_packages.txt
-read -p "Would you like to download these recommended system packages? [y/N] " recp
-
+# recommended packages installer
 if [[ "$recp" == "" || "$recp" == "N" || "$recp" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: (sudo pacman -S - < recommended_packages.txt)"
@@ -66,19 +95,7 @@ else
     sudo pacman -Sy --needed --noconfirm - < recommended_packages.txt
 fi
 
-# install an aur helper
-HELPER="yay"
-mkdir -p $HOME/.srcs
-
-echo "####################
-
-1.) yay     2.) paru
-
-####################"
-
-printf  "\n\nAn AUR helper is essential to install required packages."
-read -r -p "Select an aur helper (Default: yay) " sel
-
+# aur installer
 if [ $sel -eq 2 ]; then
     HELPER="paru"
 fi
@@ -92,9 +109,7 @@ fi
 # install aur packages
 $HELPER -Sy --needed --noconfirm - < aur.txt
 
-cat recommended_aur.txt
-read -p "Would you like to download these recommended aur packages? [y/N] " reca
-
+# recommended aur packages installer
 if [[ "$reca" == "" || "$reca" == "N" || "$reca" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: ($HELPER -S - < recommended_aur.txt)"
@@ -140,9 +155,7 @@ sudo plymouth-set-default-theme -R arch10
 # make user dirs
 xdg-user-dirs-update
 
-# prompt to install networking tools
-read -p "Would you like to install networking tools? [y/N] " netw
-
+# networking tools and applications installer
 if [[ "$netw" == "" || "$netw" == "N" || "$netw" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can find the networking setup script in the bin folder."
@@ -150,9 +163,7 @@ else
      (cd bin/; ./networking_setup.sh)
 fi
 
-# prompt to install audio tools and applications
-read -p "Would you like to install audio tools and applications? [y/N] " aud
-
+# audio tools and applications installer
 if [[ "$aud" == "" || "$aud" == "N" || "$aud" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can find the audio setup script in the bin folder."
