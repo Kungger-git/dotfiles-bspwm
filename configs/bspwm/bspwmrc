@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh --forest
 
-bspc monitor -d I II III IV V VI VII
+bspc monitor -d I II III IV V VI
 
 bspc config border_width         3
 bspc config window_gap           10
@@ -41,16 +41,16 @@ declare -a office=(Code Geany)
 for i in ${office[@]}; do
     bspc rule -a $i desktop='^4' follow=on focus=on; done
 
+# workspace 5 (Media)
+declare -a media=(vlc obs mpv mplayer lxmusic Gimp Gimp-2.10)
+for i in ${media[@]}; do
+    bspc rule -a $i desktop='^5' follow=on focus=on; done
+
 # workspace 6 (Settings)
 declare -a settings=(GParted Lxappearance Lxtask Lxrandr Arandr \
 Pavucontrol Xfce4-settings-manager)
 for i in ${settings[@]}; do
     bspc rule -a $i desktop='^6' follow=on focus=on; done
-
-# workspace 7 (Media)
-declare -a media=(vlc obs mpv mplayer lxmusic Gimp Gimp-2.10)
-for i in ${media[@]}; do
-    bspc rule -a $i desktop='^7' follow=on focus=on; done
 
 bspc rule -a Lxappearance state=floating follow=on focus=on
 bspc rule -a Arandr state=floating follow=on focus=on
