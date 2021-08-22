@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+	font:							"Source Code Pro Medium 10";
     show-icons:                     true;
     display-drun: 					"";
     drun-display-format:            "{name}";
