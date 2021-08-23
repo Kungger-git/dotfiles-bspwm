@@ -100,17 +100,17 @@ printf "[*] Performing System Upgrade and Installation...\n\n"
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
 # installing selected video driver
-sudo pacman -Sy --needed --noconfirm $DRIVER
+sudo pacman -S --needed --noconfirm $DRIVER
 
 # install system packages
-sudo pacman -Sy --needed --noconfirm - < packages.txt
+sudo pacman -S --needed --noconfirm - < packages.txt
 
 # recommended packages installer
 if [[ "$recp" == "" || "$recp" == "N" || "$recp" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: (sudo pacman -S - < recommended_packages.txt)"
 else
-    sudo pacman -Sy --needed --noconfirm - < recommended_packages.txt
+    sudo pacman -S --needed --noconfirm - < recommended_packages.txt
 fi
 
 # aur installer
@@ -125,14 +125,14 @@ if ! command -v $HELPER &> /dev/null; then
 fi
 
 # install aur packages
-$HELPER -Sy --needed --noconfirm - < aur.txt
+$HELPER -S --needed --noconfirm - < aur.txt
 
 # recommended aur packages installer
 if [[ "$reca" == "" || "$reca" == "N" || "$reca" == "n" ]]; then
     printf "\nAbort!\n"
     echo "You can install them later by doing: ($HELPER -S - < recommended_aur.txt)"
 else
-    $HELPER -Sy --needed --noconfirm - < recommended_aur.txt
+    $HELPER -S --needed --noconfirm - < recommended_aur.txt
 fi
 
 # enable services
