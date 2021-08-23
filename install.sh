@@ -53,7 +53,7 @@ echo "##################################
 1.) picom   2.) picom-jonaburg-git
 
 ##################################"
-read -r -p "\n\nSelect your preferred compositor. (Default: 1)" comp
+read -r -p "Select your preferred compositor. (Default: 1): " comp
 
 #
 # prompt for installing recommended aur packages
@@ -89,7 +89,7 @@ case $vidri in
         DRIVER="xorg-xinit"
         ;;
 
-[*])
+*)
         DRIVER='xf86-video-intel xf86-video-nouveau'
         ;;
 esac
@@ -137,7 +137,7 @@ case $comp in
         $HELPER -S --needed --noconfirm picom-jonaburg-git &&
         cp -r compositors/picom-jonaburg/ $HOME/.config/picom
         ;;
-[*])
+*)
         sudo pacman -S --needed --noconfirm picom &&
         cp -r compositors/picom-default/ $HOME/.config/picom
         ;;
