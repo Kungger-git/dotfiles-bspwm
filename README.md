@@ -4,12 +4,8 @@
 
 ![png](https://raw.githubusercontent.com/KungPaoChick/dotfiles-bspwm/master/images/lxdm.png)
 
-![png](https://raw.githubusercontent.com/KungPaoChick/dotfiles-bspwm/master/images/Screenshot_2021-08-16-26.png)
-
-![png](https://raw.githubusercontent.com/KungPaoChick/dotfiles-bspwm/master/images/Screenshot_2021-08-16-43.png)
-
-Forest Theme|pwidgets
+Forest Theme|Terminals
 --|--
-<img src="images/Screenshot_2021-08-17-09_1920x1080.png">|<img src="images/Screenshot_2021-08-17-28_1920x1080.png">
+<img src="images/Screenshot_2021-08-23-34_1280x800.png">|<img src="images/Screenshot_2021-08-23-44_1280x800.png">
 
-<img src="images/Screenshot_2021-08-17-38_1920x1080.png">
+<img src="images/Screenshot_2021-08-23-12_1280x800.png">
