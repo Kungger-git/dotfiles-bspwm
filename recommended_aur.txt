@@ -5,7 +5,9 @@ cbonsai
 colorpicker
 cowfortune
 discord
+i3lock-color
 minecraft-launcher
+networkmanager-dmenu
 pfetch
 shell-color-scripts
 spotify

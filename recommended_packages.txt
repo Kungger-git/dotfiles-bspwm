@@ -1,12 +1,16 @@
+adapta-gtk-theme
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 arandr
 archlinux-wallpaper
 calc
+dmenu
+dunst
 ffmpeg
 firefox
 geany
 gparted
+gtk-engine-murrine
 gtop
 htop
 imagemagick
@@ -19,6 +23,7 @@ neofetch
 nitrogen
 noto-fonts
 obs-studio
+papirus-icon-theme
 pcmanfm
 python-pip
 qbittorrent
@@ -31,9 +36,11 @@ ttf-dejavu
 udiskie
 ueberzug
 viewnior
+virtual-guest-utils
 vlc
 wget
 xclip
 xfce4-power-manager
 xfce4-settings
+xfce4-terminal
 youtube-dl
