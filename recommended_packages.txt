@@ -35,7 +35,7 @@ ttf-dejavu
 udiskie
 ueberzug
 viewnior
-virtual-guest-utils
+virtualbox-guest-utils
 vlc
 wget
 xclip

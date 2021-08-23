@@ -1,4 +1,6 @@
+i3lock-color
 ksuperkey
+networkmanager-dmenu
 plymouth
 plymouth-theme-arch10
 polybar
