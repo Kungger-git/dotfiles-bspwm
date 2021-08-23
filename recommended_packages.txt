@@ -1,4 +1,3 @@
-adapta-gtk-theme
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 arandr

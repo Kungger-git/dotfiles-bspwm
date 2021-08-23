@@ -1,3 +1,4 @@
+adapta-gtk-theme
 alacritty
 base-devel
 bspwm
