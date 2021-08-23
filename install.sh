@@ -74,11 +74,13 @@ case $vidri in
         ;;
 
 [*])
-        DRIVER='xf86-video-intel'
+        DRIVER='xf86-video-intel xf86-video-nouveau'
         ;;
 esac
 
 # full upgrade
+clear
+printf "\n\nPerforming Upgrade and Installation Process...\n"
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
 # installing selected video driver
