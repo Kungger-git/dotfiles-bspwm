@@ -10,7 +10,6 @@ git
 gtk-engine-murrine
 lxdm-gtk3
 papirus-icon-theme
-picom
 rofi
 sxhkd
 virtualbox-guest-utils

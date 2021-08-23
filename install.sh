@@ -15,20 +15,25 @@ echo '" #"# # #mmmmm #      #      #    # # ## # #mmmmm'; sleep 0.2
 echo ' ## ##" #      #      #      #    # # "" # #'; sleep 0.2
 echo ' #   #  #mmmmm #mmmmm  "mmm"  #mm#  #    # #mmmmm'; sleep 3
 
+#
 # choose video driver
+#
 echo "####################################################################
 
 1.) xf86-video-intel    2.) xf86-video-amdgpu   3.) nvidia  4.) Skip
 
 ####################################################################"
+read -r -p "Choose your video card driver. (Default: 1): " vidri
 
-read -r -p "Choose your video card driver(default 1)(will not re-install): " vidri
-
+#
 # prompt for installing recommended packages
+#
 cat recommended_packages.txt
 read -p "Would you like to download these recommended system packages? [y/N] " recp
 
+#
 # select an aur helper to install
+#
 HELPER="yay"
 mkdir -p $HOME/.srcs
 
@@ -37,11 +42,22 @@ echo "####################
 1.) yay     2.) paru
 
 ####################"
-
 printf  "\n\nAn AUR helper is essential to install required packages."
-read -r -p "Select an aur helper (Default: yay) " sel
+read -r -p "Select an AUR helper (Default: yay) " sel
 
+#
+# select a picom or picom fork
+#
+echo "##################################
+
+1.) picom   2.) picom-jonaburg-git
+
+##################################"
+read -r -p "\n\nSelect your preferred compositor. (Default: 1)" comp
+
+#
 # prompt for installing recommended aur packages
+#
 cat recommended_aur.txt
 read -p "Would you like to download these recommended aur packages? [y/N] " reca
 
@@ -62,7 +78,7 @@ case $vidri in
         ;;
 
 [2])
-        DRIVER='xf86-video-amdgpu xf86-video-ati xf86-video-fbdev xf86-video-vesa' 
+        DRIVER='xf86-video-amdgpu xf86-video-ati xf86-video-fbdev' 
         ;;
 
 [3])
@@ -110,6 +126,22 @@ fi
 
 # install aur packages
 $HELPER -Sy --needed --noconfirm - < aur.txt
+
+# install selected compositor
+case $comp in
+[1])
+        sudo pacman -S --needed --noconfirm picom &&
+        cp -r compositors/picom-default/ $HOME/.config/picom
+        ;;
+[2])
+        $HELPER -S --needed --noconfirm picom-jonaburg-git &&
+        cp -r compositors/picom-jonaburg/ $HOME/.config/picom
+        ;;
+[*])
+        sudo pacman -S --needed --noconfirm picom &&
+        cp -r compositors/picom-default/ $HOME/.config/picom
+        ;;
+esac
 
 # recommended aur packages installer
 if [[ "$reca" == "" || "$reca" == "N" || "$reca" == "n" ]]; then
