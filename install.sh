@@ -96,7 +96,7 @@ esac
 
 # full upgrade
 clear
-printf "\n\nPerforming Upgrade and Installation Process...\n"
+printf "[*] Performing System Upgrade and Installation...\n\n"
 sudo pacman -Syy; sudo pacman -Syu --noconfirm
 
 # installing selected video driver
@@ -126,22 +126,6 @@ fi
 
 # install aur packages
 $HELPER -Sy --needed --noconfirm - < aur.txt
-
-# install selected compositor
-case $comp in
-[1])
-        sudo pacman -S --needed --noconfirm picom &&
-        cp -r compositors/picom-default/ $HOME/.config/picom
-        ;;
-[2])
-        $HELPER -S --needed --noconfirm picom-jonaburg-git &&
-        cp -r compositors/picom-jonaburg/ $HOME/.config/picom
-        ;;
-*)
-        sudo pacman -S --needed --noconfirm picom &&
-        cp -r compositors/picom-default/ $HOME/.config/picom
-        ;;
-esac
 
 # recommended aur packages installer
 if [[ "$reca" == "" || "$reca" == "N" || "$reca" == "n" ]]; then
@@ -222,6 +206,22 @@ cp -rf dots/.zshrc    \
        dots/.mpd/ $HOME
        
 cp -rf configs/* $HOME/.config/
+
+# install selected compositor
+case $comp in
+[1])
+        sudo pacman -S --needed --noconfirm picom &&
+        cp -r compositors/picom-default/ $HOME/.config/picom
+        ;;
+[2])
+        $HELPER -S --needed --noconfirm picom-jonaburg-git &&
+        cp -r compositors/picom-jonaburg/ $HOME/.config/picom
+        ;;
+*)
+        sudo pacman -S --needed --noconfirm picom &&
+        cp -r compositors/picom-default/ $HOME/.config/picom
+        ;;
+esac
 
 # copy songs
 cp songs/* $HOME/Music
