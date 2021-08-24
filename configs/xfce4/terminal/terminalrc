@@ -29,9 +29,10 @@ MiscShowUnsafePasteDialog=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Source Code Pro Medium 10
 BackgroundDarkness=0.900000
-ColorForeground=#dcdcdc
+ColorForeground=#c4c4c7c7c5c5
 ColorBackground=#050513132d2d
 ColorPalette=#3f3f3f;#705050;#60b48a;#dfaf8f;#9ab8d7;#dc8cc3;#8cd0d3;#dcdcdc;#709080;#dca3a3;#72d5a3;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
 ColorCursor=#dcdcdc
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+TabActivityColor=#000000000000
 
