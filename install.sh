@@ -30,11 +30,13 @@ main() {
     sudo cp -f systemfiles/01_pw_feedback /etc/sudoers.d/
 
     reset
-    echo "${BLUE}m     m mmmmmm m        mmm   mmmm  m    m mmmmmm"; sleep 0.2
-    echo '#  #  # #      #      m"   " m"  "m ##  ## #'; sleep 0.2
-    echo '" #"# # #mmmmm #      #      #    # # ## # #mmmmm'; sleep 0.2
-    echo ' ## ##" #      #      #      #    # # "" # #'; sleep 0.2
-    echo ' #   #  #mmmmm #mmmmm  "mmm"  #mm#  #    # #mmmmm'; sleep 3
+    echo "${BLUE}▄▄      ▄▄ ▄▄▄▄▄▄▄▄  ▄▄           ▄▄▄▄     ▄▄▄▄    ▄▄▄  ▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄"; sleep 0.1
+    echo "██      ██ ██▀▀▀▀▀▀  ██         ██▀▀▀▀█   ██▀▀██   ███  ███  ██▀▀▀▀▀▀  ██"; sleep 0.1
+    echo "▀█▄ ██ ▄█▀ ██        ██        ██▀       ██    ██  ████████  ██        ██"; sleep 0.1
+    echo " ██ ██ ██  ███████   ██        ██        ██    ██  ██ ██ ██  ███████   ██"; sleep 0.1
+    echo " ███▀▀███  ██        ██        ██▄       ██    ██  ██ ▀▀ ██  ██        ▀▀"; sleep 0.1
+    echo " ███  ███  ██▄▄▄▄▄▄  ██▄▄▄▄▄▄   ██▄▄▄▄█   ██▄▄██   ██    ██  ██▄▄▄▄▄▄  ▄▄"; sleep 0.1
+    echo " ▀▀▀  ▀▀▀  ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀    ▀▀    ▀▀  ▀▀▀▀▀▀▀▀  ▀▀"
     echo "${RESET}"
 
     #
