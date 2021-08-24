@@ -179,9 +179,7 @@ ${BOLD}##################################${RESET}"
 
     menuentry 'Shutdown System' --class shutdown {
         halt
-    }
-
-    EOF"
+    }"
     sudo cp -f grubcfg/grubd/* /etc/grub.d/
     sudo cp -f grubcfg/grub /etc/default/
     sudo cp -rf grubcfg/themes/default /boot/grub/themes/
@@ -212,7 +210,8 @@ ${BOLD}##################################${RESET}"
     fi
 
     # installs oh-my-zsh and changes shell to zsh
-    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    curl -L http://install.ohmyz.sh | sh
+    chsh -s /bin/zsh
 
     # copy home dots
     cp -rf dots/.zshrc    \
