@@ -212,7 +212,7 @@ ${BOLD}##################################${RESET}"
     fi
 
     # installs oh-my-zsh and changes shell to zsh
-    #sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     # copy home dots
     cp -rf dots/.zshrc    \
