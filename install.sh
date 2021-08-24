@@ -30,7 +30,8 @@ main() {
     sudo cp -f systemfiles/01_pw_feedback /etc/sudoers.d/
 
     reset
-    echo "${BLUE}▄▄      ▄▄ ▄▄▄▄▄▄▄▄  ▄▄           ▄▄▄▄     ▄▄▄▄    ▄▄▄  ▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄"; sleep 0.1
+    echo "${BLUE}"
+    echo "▄▄      ▄▄ ▄▄▄▄▄▄▄▄  ▄▄           ▄▄▄▄     ▄▄▄▄    ▄▄▄  ▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄"; sleep 0.1
     echo "██      ██ ██▀▀▀▀▀▀  ██         ██▀▀▀▀█   ██▀▀██   ███  ███  ██▀▀▀▀▀▀  ██"; sleep 0.1
     echo "▀█▄ ██ ▄█▀ ██        ██        ██▀       ██    ██  ████████  ██        ██"; sleep 0.1
     echo " ██ ██ ██  ███████   ██        ██        ██    ██  ██ ██ ██  ███████   ██"; sleep 0.1
@@ -233,15 +234,15 @@ ${BOLD}##################################${RESET}"
     case $comp in
     [1])
             sudo pacman -S --needed --noconfirm picom &&
-            cp -r compositors/picom-default/ $HOME/.config/picom
+            cp -r compositors/default/ $HOME/.config/picom
             ;;
     [2])
             $HELPER -S --needed --noconfirm picom-jonaburg-git &&
-            cp -r compositors/picom-jonaburg/ $HOME/.config/picom
+            cp -r compositors/jonaburg/ $HOME/.config/picom
             ;;
     *)
             sudo pacman -S --needed --noconfirm picom &&
-            cp -r compositors/picom-default/ $HOME/.config/picom
+            cp -r compositors/default/ $HOME/.config/picom
             ;;
     esac
 
