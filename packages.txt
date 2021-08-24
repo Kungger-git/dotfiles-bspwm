@@ -8,6 +8,7 @@ git
 lxdm-gtk3
 rofi
 sxhkd
+wget
 xdg-user-dirs
 xf86-input-libinput
 xorg

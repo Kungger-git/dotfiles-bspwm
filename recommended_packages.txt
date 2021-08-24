@@ -37,7 +37,6 @@ ueberzug
 viewnior
 virtualbox-guest-utils
 vlc
-wget
 xclip
 xfce4-power-manager
 xfce4-settings
