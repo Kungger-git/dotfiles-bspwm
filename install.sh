@@ -132,7 +132,7 @@ ${BOLD}##################################${RESET}"
     # full upgrade
     clear
     printf "${GREEN}${BOLD}[*] ${RESET}Performing System Upgrade and Installation...\n\n"
-    sudo pacman -Syy; sudo pacman -Syu --noconfirm
+    sudo pacman -Syu --noconfirm
 
     # installing selected video driver
     sudo pacman -S --needed --noconfirm $DRIVER
@@ -225,7 +225,7 @@ ${BOLD}##################################${RESET}"
     # shell environment case
     case $she in
     [1])
-            printf "\nYou chose ${YELLOW}bash shell${RESET}"
+            printf "\nYou chose ${YELLOW}bash shell${RESET}\n\n"
             git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
             (cd $HOME/.srcs/synth-shell; ./setup.sh)
             
@@ -233,7 +233,7 @@ ${BOLD}##################################${RESET}"
             cp -f shells/bash/.bashrc $HOME
             ;;
     [2])
-            printf "\nYou chose ${YELLOW}zsh shell${RESET}"
+            printf "\nYou chose ${YELLOW}zsh shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm zsh
             curl -L http://install.ohmyz.sh | sh
             chsh -s /bin/zsh
@@ -246,15 +246,15 @@ ${BOLD}##################################${RESET}"
             git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
             ;;
     [3])
-            printf "\nYou chose ${YELLOW}fish shell${RESET}"
+            printf "\nYou chose ${YELLOW}fish shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm fish
             chsh -s /bin/fish
 
             # downloads oh-my-fish installer
-            curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish | chmod +x install.fish
+            curl -L https://get.oh-my.fish > bin/install.fish; chmod +x bin/install.fish
             clear
-            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. Execute the installer in ${YELLOW}$HOME/.srcs/install.fish${RESET}"
-
+            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. Execute the installer in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 5
+        
             # copies fish congigurations
             if [[ ! -d $HOME/.config/fish ]]; then
                 mkdir -p $HOME/.config/fish
@@ -264,7 +264,7 @@ ${BOLD}##################################${RESET}"
             fi
             ;;
     *)
-            printf "\nThe default is: ${YELLOW}bash shell${RESET}"
+            printf "\nThe default is: ${YELLOW}bash shell${RESET}\n\n"
             git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
             (cd $HOME/.srcs/synth-shell; ./setup.sh)
 
