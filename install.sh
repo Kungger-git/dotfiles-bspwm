@@ -81,6 +81,16 @@ ${BOLD}##################################${RESET}"
     read -r -p "${YELLOW}${BOLD}[!] ${RESET}Select your preferred compositor. ${YELLOW}(Default: 1)${RESET}: " comp
 
     #
+    # prompt for selecting a shell environment
+    #
+    echo "${BOLD}##################################${RESET}
+
+${RED}1.) bash${RESET}      ${GREEN}2.) zsh${RESET}     ${BLUE}3.) fish${RESET}
+
+${BOLD}##################################${RESET}"
+    read -r -p "${YELLOW}${BOLD}[!] ${RESET}Select your preferred shell. ${YELLOW}(Default: 1)${RESET}: " she
+
+    #
     # prompt for installing recommended aur packages
     #
     cat recommended_aur.txt
@@ -213,12 +223,37 @@ ${BOLD}##################################${RESET}"
     fi
 
     # installs oh-my-zsh and changes shell to zsh
-    curl -L http://install.ohmyz.sh | sh
-    chsh -s /bin/zsh
+    #curl -L http://install.ohmyz.sh | sh
+    #chsh -s /bin/zsh
+    case $she in
+    [1])
+            printf "\nYou chose ${YELLOW}bash shell${RESET}"
+            ;;
+    [2])
+            printf "\nYou chose ${YELLOW}zsh shell${RESET}"
+            curl -L http://install.ohmyz.sh | sh
+            chsh -s /bin/zsh
+            
+            # copies zshrc file
+            cp -f shells/zsh/.zshrc $HOME
+            ;;
+    [3])
+            printf "\nYou chose ${YELLOW}fish shell${RESET}"
+            sudo pacman -S --noconfirm fish
+            chsh -s /bin/fish
+
+            curl -L https://get.oh-my.fish | fish
+            # copies fish congigurations
+            cp -rf shells/fish/functions/ $HOME/.config/fish/
+            ;;
+    *)
+            printf "\nThe default is: ${YELLOW}bash shell${RESET}"
+            ;;
+    esac 
+
 
     # copy home dots
-    cp -rf dots/.zshrc    \
-           dots/.vimrc    \
+    cp -rf dots/.vimrc    \
            dots/.xinitrc  \
            dots/.hushlogin\
            dots/.gtkrc-2.0\
