@@ -222,27 +222,30 @@ ${BOLD}##################################${RESET}"
         (cd bin/; ./audio_setup.sh)
     fi
 
-    # installs oh-my-zsh and changes shell to zsh
-    #curl -L http://install.ohmyz.sh | sh
-    #chsh -s /bin/zsh
+    # shell environment case
     case $she in
     [1])
             printf "\nYou chose ${YELLOW}bash shell${RESET}"
             ;;
     [2])
             printf "\nYou chose ${YELLOW}zsh shell${RESET}"
+            sudo pacman -S --needed --noconfirm zsh
             curl -L http://install.ohmyz.sh | sh
             chsh -s /bin/zsh
             
             # copies zshrc file
             cp -f shells/zsh/.zshrc $HOME
+            
+            # clone zsh plugins
+            git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+            git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
             ;;
     [3])
             printf "\nYou chose ${YELLOW}fish shell${RESET}"
-            sudo pacman -S --noconfirm fish
+            sudo pacman -S --needed --noconfirm fish
             chsh -s /bin/fish
 
-            curl -L https://get.oh-my.fish | fish
+            curl -L https://get.oh-my.fish > install.fish | chmod +x install.fish
             # copies fish congigurations
             cp -rf shells/fish/functions/ $HOME/.config/fish/
             ;;
@@ -293,10 +296,6 @@ ${BOLD}##################################${RESET}"
         mkdir -p "$FDIR"
         cp -rf fonts/* "$FDIR"
     fi
-
-    # clone zsh plugins
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     # last orphan delete and cache delete
     sudo pacman -Rns --noconfirm $(pacman -Qtdq); sudo pacman -Sc --noconfirm; $HELPER -Sc --noconfirm; sudo pacman -R --noconfirm i3-wm
