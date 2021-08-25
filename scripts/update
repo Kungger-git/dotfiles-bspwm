@@ -7,7 +7,6 @@ if ! command -v $HELPER &> /dev/null; then
 fi
 
 # update pacman packages
-sudo pacman -Syy
 sudo pacman -Syu --noconfirm
 
 # update aur packages

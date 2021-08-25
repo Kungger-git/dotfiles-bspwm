@@ -251,7 +251,7 @@ ${BOLD}##################################${RESET}"
             chsh -s /bin/fish
 
             # downloads oh-my-fish installer
-            curl -L https://get.oh-my.fish > bin/install.fish; chmod +x bin/install.fish
+            curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish; chmod +x $HOME/.srcs/install.fish
             clear
             echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. Execute the installer in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 5
         
