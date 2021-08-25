@@ -226,6 +226,11 @@ ${BOLD}##################################${RESET}"
     case $she in
     [1])
             printf "\nYou chose ${YELLOW}bash shell${RESET}"
+            git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
+            (cd $HOME/.srcs/synth-shell; ./setup.sh)
+            
+            # copies bashrc file
+            cp -f shells/bash/.bashrc $HOME
             ;;
     [2])
             printf "\nYou chose ${YELLOW}zsh shell${RESET}"
@@ -245,12 +250,26 @@ ${BOLD}##################################${RESET}"
             sudo pacman -S --needed --noconfirm fish
             chsh -s /bin/fish
 
-            curl -L https://get.oh-my.fish > install.fish | chmod +x install.fish
+            # downloads oh-my-fish installer
+            curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish | chmod +x install.fish
+            clear
+            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. Execute the installer in ${YELLOW}$HOME/.srcs/install.fish${RESET}"
+
             # copies fish congigurations
-            cp -rf shells/fish/functions/ $HOME/.config/fish/
+            if [[ ! -d $HOME/.config/fish ]]; then
+                mkdir -p $HOME/.config/fish
+                cp -rf shells/fish/functions/ $HOME/.config/fish/
+            else
+                cp -rf shells/fish/funstions/ $HOME/.config/fish/
+            fi
             ;;
     *)
             printf "\nThe default is: ${YELLOW}bash shell${RESET}"
+            git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
+            (cd $HOME/.srcs/synth-shell; ./setup.sh)
+
+            # copies bashrc file
+            cp -f shells/bash/.bashrc $HOME
             ;;
     esac 
 
