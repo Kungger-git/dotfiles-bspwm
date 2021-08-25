@@ -11,4 +11,3 @@ sxhkd
 xdg-user-dirs
 xf86-input-libinput
 xorg
-zsh
