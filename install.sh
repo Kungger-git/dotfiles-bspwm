@@ -252,9 +252,9 @@ ${BOLD}##################################${RESET}"
 
             # downloads oh-my-fish installer
             curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish; chmod +x $HOME/.srcs/install.fish
-            fish -c "cd $HOME/.srcs/; ./install.fish; omf install cbjohnson"
-            #clear
-            #echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. You can execute the installer later on in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 3
+            #fish -c "cd $HOME/.srcs/; ./install.fish; omf install cbjohnson"
+            clear
+            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. You can execute the installer later on in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 3
         
             # copies fish congigurations
             if [[ ! -d $HOME/.config/fish ]]; then
