@@ -253,14 +253,14 @@ ${BOLD}##################################${RESET}"
             # downloads oh-my-fish installer
             curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish; chmod +x $HOME/.srcs/install.fish
             clear
-            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. Execute the installer in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 5
+            echo "${YELLOW}${BOLD}[!] ${RESET}oh-my-fish install script has been downloaded. You can execute the installer later on in ${YELLOW}$HOME/.srcs/install.fish${RESET}"; sleep 3
         
             # copies fish congigurations
             if [[ ! -d $HOME/.config/fish ]]; then
                 mkdir -p $HOME/.config/fish
-                cp -rf shells/fish/functions/ $HOME/.config/fish/
+                cp -rf shells/fish/config.fish $HOME/.config/fish/
             else
-                cp -rf shells/fish/funstions/ $HOME/.config/fish/
+                cp -rf shells/fish/config.fish $HOME/.config/fish/
             fi
             ;;
     *)
