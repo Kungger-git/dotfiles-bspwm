@@ -3,9 +3,12 @@ adobe-source-han-sans-kr-fonts
 arandr
 archlinux-wallpaper
 calc
+cowfortune
+cowsay
 dmenu
 dunst
 ffmpeg
+figlet
 firefox
 geany
 gparted
@@ -15,6 +18,7 @@ htop
 imagemagick
 jq
 libreoffice-fresh
+lolcat
 lxappearance
 maim
 ncdu

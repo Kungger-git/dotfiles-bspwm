@@ -7,6 +7,8 @@
 
 PS1='[\u@\h \W]\$ '
 
+# alias btrfortune='fortune -a -s | head -n 1 | figlet | lolcat'
+# alias fortunecow='fortune -a -s | head -n 1 | cowsay | lolcat'
 alias ls='ls --color=always -rthla'
 alias matrix='unimatrix -f -l ocCgGkS -s 96'
 alias clock='tty-clock -sct -C 4'
