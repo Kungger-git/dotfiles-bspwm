@@ -1,10 +1,10 @@
 bash-pipes
 bpytop
 cava
-cbonsai
 colorpicker
 cowfortune
 discord
+figlet
 minecraft-launcher
 pfetch
 shell-color-scripts
