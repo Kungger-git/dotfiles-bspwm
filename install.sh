@@ -276,7 +276,6 @@ ${BOLD}##################################${RESET}"
            dots/.xinitrc  \
            dots/.hushlogin\
            dots/.gtkrc-2.0\
-           dots/.gitconfig\
            dots/.fehbg    \
            dots/.dmrc     \
            dots/.ncmpcpp/ \
