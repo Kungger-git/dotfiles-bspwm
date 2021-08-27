@@ -226,8 +226,6 @@ ${BOLD}##################################${RESET}"
     case $she in
     [1])
             printf "\nYou chose ${YELLOW}bash shell${RESET}\n\n"
-            git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
-            (cd $HOME/.srcs/synth-shell; ./setup.sh)
             
             # copies bashrc file
             cp -f shells/bash/.bashrc $HOME
@@ -266,8 +264,6 @@ ${BOLD}##################################${RESET}"
             ;;
     *)
             printf "\nThe default is: ${YELLOW}bash shell${RESET}\n\n"
-            git clone --recursive https://github.com/andresgongora/synth-shell.git $HOME/.srcs/synth-shell
-            (cd $HOME/.srcs/synth-shell; ./setup.sh)
 
             # copies bashrc file
             cp -f shells/bash/.bashrc $HOME
