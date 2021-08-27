@@ -2,9 +2,11 @@ adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 arandr
 archlinux-wallpaper
+bpytop
 calc
 cowfortune
 cowsay
+discord
 dmenu
 dunst
 ffmpeg

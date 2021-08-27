@@ -1,12 +1,6 @@
 bash-pipes
-bpytop
 cava
 colorpicker
-cowfortune
-cowsay
-discord
-figlet
-lolcat
 minecraft-launcher
 pfetch
 shell-color-scripts
