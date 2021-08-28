@@ -107,6 +107,24 @@ ${BOLD}##################################${RESET}"
     # post prompt process
     #
     #
+
+    # this is probably useless
+    if ! command -v git &> /dev/null; then
+        printf "\n\n${YELLOW}${BOLD}[!] ${RESET}How did you even get this repo without downloading git?\n"
+        sudo pacman -S --noconfirm git
+    fi
+    
+    # aur helper set to paru if sel var is eq to 2
+    if [ $sel -eq 2 ]; then
+        HELPER="paru"
+    fi
+    
+    # clones specified aur helper
+    if ! command -v $HELPER &> /dev/null; then
+        git clone https:///aur.archlinux.org/$HELPER.git $HOME/.srcs/$HELPER 
+    fi
+
+    # video driver card case
     case $vidri in
     [1])
             DRIVER='xf86-video-amdgpu xf86-video-ati xf86-video-fbdev' 
@@ -149,15 +167,8 @@ ${BOLD}##################################${RESET}"
     fi
 
     # aur installer
-    if [ $sel -eq 2 ]; then
-        HELPER="paru"
-    fi
-
-    if ! command -v $HELPER &> /dev/null; then
-        printf "\n\n${YELLOW}${BOLD}[!] ${RESET}We'll be installing ${GREEN}${BOLD}$HELPER${RESET} then.\n\n"
-            git clone https://aur.archlinux.org/$HELPER.git $HOME/.srcs/$HELPER
-            (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
-    fi
+    printf "\n\n${YELLOW}${BOLD}[!] ${RESET}We'll be installing ${GREEN}${BOLD}$HELPER${RESET} now.\n\n"
+    (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
 
     # install aur packages
     $HELPER -S --needed --noconfirm - < aur.txt
