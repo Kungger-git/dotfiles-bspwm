@@ -4,7 +4,6 @@ base-devel
 bspwm
 curl
 feh
-git
 lxdm-gtk3
 rofi
 sxhkd
