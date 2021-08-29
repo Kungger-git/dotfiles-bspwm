@@ -167,8 +167,10 @@ ${BOLD}##################################${RESET}"
     fi
 
     # aur installer
-    printf "\n\n${YELLOW}${BOLD}[!] ${RESET}We'll be installing ${GREEN}${BOLD}$HELPER${RESET} now.\n\n"
-    (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
+    if [[ -d $HOME/.srcs/$HELPER ]]; then
+        printf "\n\n${YELLOW}${BOLD}[!] ${RESET}We'll be installing ${GREEN}${BOLD}$HELPER${RESET} now.\n\n"
+        (cd $HOME/.srcs/$HELPER/; makepkg -si --noconfirm)
+    fi
 
     # install aur packages
     $HELPER -S --needed --noconfirm - < aur.txt
