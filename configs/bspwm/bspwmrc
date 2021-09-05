@@ -82,7 +82,7 @@ sxhkd &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash $HOME/.fehbg-bspwm
+bash $HOME/.config/bspwm/.fehbg
 
 # Enable power management
 xfce4-power-manager &
