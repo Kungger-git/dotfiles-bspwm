@@ -289,7 +289,7 @@ ${BOLD}##################################${RESET}"
            dots/.xinitrc  \
            dots/.hushlogin\
            dots/.gtkrc-2.0\
-           dots/.fehbg    \
+           dots/.fehbg-bspwm    \
            dots/.dmrc     \
            dots/.ncmpcpp/ \
            dots/.mpd/ $HOME
