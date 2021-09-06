@@ -219,6 +219,9 @@ ${BOLD}##################################${RESET}"
     # make user dirs
     xdg-user-dirs-update
 
+    # copies all configs to .config directory
+    cp -rf configs/* $HOME/.config/
+
     # networking tools and applications installer
     if [[ "$netw" == "" || "$netw" == "N" || "$netw" == "n" ]]; then
         printf "\n${RED}Abort!${RESET}\n"
@@ -247,8 +250,8 @@ ${BOLD}##################################${RESET}"
             printf "\nYou chose ${YELLOW}zsh shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm zsh
             curl -L http://install.ohmyz.sh | sh
-            chsh -s /bin/zsh
-            
+            sed -i "s/alacritty.yml/alacritty.yml -e zsh -c/g" $HOME/.config/sxhkd/sxhkdrc           
+ 
             # copies zshrc file
             cp -f shells/zsh/.zshrc $HOME
             
@@ -259,7 +262,7 @@ ${BOLD}##################################${RESET}"
     [3])
             printf "\nYou chose ${YELLOW}fish shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm fish
-            chsh -s /bin/fish
+            sed -i "s/alacritty.yml/alacritty.yml -e fish -c/g" $HOME/.config/sxhkd/sxhkdrc
 
             # downloads oh-my-fish installer
             curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish; chmod +x $HOME/.srcs/install.fish
@@ -283,7 +286,6 @@ ${BOLD}##################################${RESET}"
             ;;
     esac 
 
-
     # copy home dots
     cp -rf dots/.vimrc    \
            dots/.xinitrc  \
@@ -293,8 +295,6 @@ ${BOLD}##################################${RESET}"
            dots/.ncmpcpp/ \
            dots/.mpd/ $HOME
        
-    cp -rf configs/* $HOME/.config/
-
     # install selected compositor
     case $comp in
     [1])
