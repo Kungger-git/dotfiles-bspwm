@@ -250,7 +250,7 @@ ${BOLD}##################################${RESET}"
             printf "\nYou chose ${YELLOW}zsh shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm zsh
             curl -L http://install.ohmyz.sh | sh
-            sed -i "s/alacritty.yml/alacritty.yml -e zsh -c/g" $HOME/.config/sxhkd/sxhkdrc           
+            sed -i "s/alacritty.yml/alacritty.yml -e zsh/g" $HOME/.config/sxhkd/sxhkdrc           
  
             # copies zshrc file
             cp -f shells/zsh/.zshrc $HOME
@@ -262,7 +262,7 @@ ${BOLD}##################################${RESET}"
     [3])
             printf "\nYou chose ${YELLOW}fish shell${RESET}\n\n"
             sudo pacman -S --needed --noconfirm fish
-            sed -i "s/alacritty.yml/alacritty.yml -e fish -c/g" $HOME/.config/sxhkd/sxhkdrc
+            sed -i "s/alacritty.yml/alacritty.yml -e fish/g" $HOME/.config/sxhkd/sxhkdrc
 
             # downloads oh-my-fish installer
             curl -L https://get.oh-my.fish > $HOME/.srcs/install.fish; chmod +x $HOME/.srcs/install.fish
