@@ -254,7 +254,10 @@ ${BOLD}##################################${RESET}"
  
             # copies zshrc file
             cp -f shells/zsh/.zshrc $HOME
-            
+           
+            # replace username in zsh export
+            sed -i "s/kungger/$USER/g" $HOME/.zshrc
+ 
             # clone zsh plugins
             git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
             git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -294,7 +297,10 @@ ${BOLD}##################################${RESET}"
            dots/.dmrc     \
            dots/.ncmpcpp/ \
            dots/.mpd/ $HOME
-       
+    
+    # replaces username in .gtkrc.2.0 file
+    sed -i "s/kungger/$USER/g" $HOME/.gtkrc-2.0
+ 
     # install selected compositor
     case $comp in
     [1])
